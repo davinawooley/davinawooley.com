@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Experiments | DEW</title>
+    <link rel="shortcut icon" type="image/png" href="../images/designfavicon.svg" sizes="32x32" />
+    <link href="../css/experiments.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/jil3vcw.css">
+   
+    <link rel="stylesheet" href="https://use.typekit.net/osf7jzq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <script src="../scripts/home.js"></script>
+</head>
+
+<body>
+    
+    <div id="head">
+
+        <ul></ul>
+    </div>
+
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <div class="menu">
+            <div>
+                <div class="texts">
+                    <ul>
+                        <li><a href="../html/about.html" id="menuLinks">ABOUT</a></li>
+                        <li id="divideTab">|</li>
+                        <li><a href="../html/experiments.html" id="menuLinks">EXPERIMENTS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <a href="../html/index.html"><img id="homeIcon" src="../images/dewLogo.png" width="40px" style="float:left;"></a>
+
+
+
+    <header class="showcase">
+        <div id="margined">
+            <div id="shortBio">
+                <p id="underName">Experiments</p>
+            </div>
+
+            <div class="container"></div>
+            <div id="shortBio">
+
+
+                <p id="bioBody">
+
+                    I refer to my creative works as a collection of experiments because my goal is to explore the potential of innovative technologies to develop user-centered
+                    solutions. Via the amalgamation of design with development, I leverage various mediums and modalities to explore effective and exciting ways to
+                    educate, entertain and assist users.
+                    
+
+                    <br><br> These experiments represent years of fun, a bit of frustration, and a lot of growth. Enjoy! :)
+                       <br><br>
+
+                    <div id="toTop">
+                        <!-- <div id="titleWork"> -->
+                            <p class="animate__animated animate__fadeIn" id="navigateWork"> Categories:
+                                <button id="show_all" onclick="show_all()" class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#4c4c4c'; this.style.color='#4c4c4c'" 
+                                    target="_blank ">All</button>
+
+                                <button id="show_threeD " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing "  onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#4c4c4c'; this.style.color='#4c4c4c'" target="_blank " onclick="show_threeD() ">3D/XR</button>
+
+                                <!-- <button id="show_print " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing " onmouseover="this.bgColor='white' ; this.style.color='grey' " onmouseout="this.bgColor='grey'
+                                    ; this.style.color='white' " target="_blank " onclick="show_print() ">Creative Code</button>  -->
+
+                                <button id="show_motion " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing " onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#4c4c4c'; this.style.color='#4c4c4c'" target="_blank " onclick="show_motion() ">Motion</button>
+                                
+                                <button id="show_ui " onclick="show_ui() " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing " onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#4c4c4c'; this.style.color='#4c4c4c'" target="_blank ">UI/UX</button>            
+<!--                                 
+                                <button id="show_hardware " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing " onmouseover="this.bgColor='white' ; this.style.color='grey' " onmouseout="this.bgColor='grey'
+                                    ; this.style.color='white' " target="_blank " onclick="show_hardware() ">Hardware</button> -->
+                                
+                                <button id="show_software " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing " onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#4c4c4c'; this.style.color='#4c4c4c'" target="_blank " onclick="show_software() ">Software</button>
+                                
+                                <button id="show_professional " class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing " onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#4c4c4c'; this.style.color='#4c4c4c'" target="_blank " onclick="show_professional() ">Misc.</button>
+          
+                            </p>
+                        <!-- </div> -->
+                        <!-- <br> -->
+                        <p id="featured">* Featured Works</p>
+                    </div>
+
+                    </div>
+
+
+                    <div class="item_wrapper ">
+                        <br><br>
+                        <div class="item ui">
+                            <p class="animate__animated animate__fadeIn" id="titleWork">
+                                <sup>01</sup> <a href="../html/herdHikes.html">HerdHikes</a></p>
+                            <p class="animate__animated animate__fadeIn " id="descriptName">UI / UX  |  2021</p>
+                        </div>
+
+
+                        <!-- <div class="item ui">
+                            <p class="animate__animated animate__fadeIn" id="titleWork">
+                                <a href="../html/notably.html "><sup>02</sup> Saul Bass Immersive*</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">UI / UX  |  2022</p>
+                        </div> -->
+
+                        <div class="item software">
+                            <p class="animate__animated animate__fadeIn" id="titleWork">
+                                <sup>02</sup> <a href="../html/ablohImmersive.html">Abloh Immersive</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">SOFTWARE  |  2022</p>
+                        </div>
+
+                        <div class="item threeD">
+                            <p class="animate__animated animate__fadeIn" id="titleWork"> <sup>03</sup><a href="../html/arSpaceOdyssey.html"> 2022: AR Space Odyssey</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">3D  |  2022</p>
+                        </div>
+
+
+                        <div class="item print">
+                            <p class="animate__animated animate__fadeIn" id="titleWork"> <sup>04</sup> <a href="../html/generativeTypography.html">Generative Typography</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">GENERATIVE ART  |  2022</p>
+                        </div>
+
+
+                        <div class="item motion">
+                            <p class="animate__animated animate__fadeIn" id="titleWork"> <sup>05</sup><a href="../html/kineticTypography.html"> Kinetic Typography</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">MOTION  |  2022</p>
+                        </div>
+
+
+                        <div class="item hardware">
+                            <p class="animate__animated animate__fadeIn" id="titleWork"> <sup>06</sup><a href="../html/sensorb.html"> SensOrb</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">HARDWARE  |  2021</p>
+                        </div>
+
+                        <div class="item professional">
+                            <p class="animate__animated animate__fadeIn" id="titleWork"> <sup>07</sup><a href="../html/technicalClone.html"> Technical Clone</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">PROFESSIONAL  |  2022</p>
+                        </div>
+
+                 
+                        <div class="item ui">
+                            <p class="animate__animated animate__fadeIn" id="titleWork">
+                                <sup>08</sup><a href="../html/dewBranding.html"> DEW Branding</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">MISC.  |  2022</p>
+                        </div>
+
+                        <div class="item ui">
+                            <p class="animate__animated animate__fadeIn" id="titleWork">
+                                <sup>09</sup><a href="../html/miscWorks.html"> Misc. Works</a></p>
+                            <p class="animate__animated animate__fadeIn" id="descriptName">MISC.  |  2019-2022</p>
+                        </div>
+                        
+                 
+
+
+                        <br>
+
+                    </div>
+
+
+                    <!-- function for sort -->
+                    <script>
+                        //find all elements tagged "ui "
+                        var ui = document.querySelectorAll('.ui');
+
+                        //find all elements tagged "software "
+                        var software = document.querySelectorAll('.software');
+
+                        //find all elements tagged "threeD "
+                        var threeD = document.querySelectorAll('.threeD');
+
+                        //find all elements tagged "print "
+                        var print = document.querySelectorAll('.print');
+
+                        //find all elements tagged "motion "
+                        var motion = document.querySelectorAll('.motion');
+
+                        //find all elements tagged "hardware "
+                        var hardware = document.querySelectorAll('.hardware');
+                        
+                         //find all elements tagged "professional "
+                         var professional = document.querySelectorAll('.professional');
+
+
+                        //find all elements with "item " class
+                        var alls = document.querySelectorAll('.item');
+
+                        //function to initially loop through all items and hide them
+                        function hide_init() {
+                            for (var i = 0; i < alls.length; ++i) {
+                                alls[i].style.display = 'none';
+                            }
+                        }
+
+                        function show_ui() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through ui-tagged items and show them  
+                            for (var i = 0; i < ui.length; ++i) {
+                                ui[i].style.display = 'inline';
+                            }
+                        }
+
+                        function show_software() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through software-tagged items and show them  
+                            for (var i = 0; i < software.length; ++i) {
+                                software[i].style.display = 'inline';
+                            }
+
+                        }
+                        // 3d
+                        function show_threeD() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through threeD-tagged items and show them  
+                            for (var i = 0; i < threeD.length; ++i) {
+                                threeD[i].style.display = 'inline';
+                            }
+
+                        }
+                        // print
+                        function show_print() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through print-tagged items and show them  
+                            for (var i = 0; i < print.length; ++i) {
+                                print[i].style.display = 'inline';
+                            }
+
+                        }
+                        // hardware
+                        function show_hardware() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through hardware-tagged items and show them  
+                            for (var i = 0; i < hardware.length; ++i) {
+                                hardware[i].style.display = 'inline';
+                            }
+
+                        }
+                        // motion
+                        function show_motion() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through motion-tagged items and show them  
+                            for (var i = 0; i < motion.length; ++i) {
+                                motion[i].style.display = 'inline';
+                            }
+                        }
+                           // professional
+                           function show_professional() {
+                            //call the inital hide function
+                            hide_init();
+                            //loop through motion-tagged items and show them  
+                            for (var i = 0; i < professional.length; ++i) {
+                                professional[i].style.display = 'inline';
+                            }
+                        }
+
+                        function show_all() {
+                            //loop through all items and show them
+                            for (var i = 0; i < alls.length; ++i) {
+                                alls[i].style.display = 'inline                                                                                                                                        ';
+                            }
+                        }
+                    </script>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <!-- <style>
+         
+            
+            .buttondw {
+           
+                position: absolute;
+            
+                z-index: 1;
+
+                padding: 40px, 32px;
+                text-transform: uppercase;
+
+                cursor: pointer;
+          
+                background-color: .5s, color .5s;
+            }
+            
+            .buttondw:hover {
+                background-color: transparent;
+                border-color: transparent;
+                color: #444;
+            }
+            
+            .buttondw:hover~.bg-1 {
+                opacity: 0;
+                z-index: 1;
+            }
+            
+            .buttondw:hover~.bg-2 {
+                opacity: .7;
+                z-index: 1;
+            }
+            
+            .bg-2 {
+                position: absolute;
+                top: 0%;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background-repeat: repeat;
+                background-position: center center;
+                transition: opacity .75s;
+                background-image: url('../images/logo2.png');
+                opacity: 0;
+            }
+           
+        </style> -->
+
+
+        </details>
+
+
+    </div>
+
+    <style>
+
+    
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          z-index: 99;
+          border: none;
+          outline: none;
+       
+          color: white;
+          cursor: pointer;
+          padding: 15px;
+          border-radius: 4px;
+        }
+   
+        </style>
+    
+    
+    
+    <button onclick="topFunction()" id="myBtn" title="Scroll to Top" class="back-to-top-link"><img src="../images/upArrow.png" width="30px"></button>
+    <!-- </div> -->
+    
+    <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 100|| document.documentElement.scrollTop > 100) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<!-- 
+    <style>
+        
+        
+        .buttondw {
+           
+            position: absolute;
+          
+            z-index: 1;
+            
+            padding: 40px, 32px;
+            text-transform: uppercase;
+           
+            cursor: pointer;
+
+            background-color: .5s, color .5s;
+        }
+        
+        .buttondw:hover {
+            background-color: transparent;
+            border-color: transparent;
+        }
+        
+        .buttondw:hover~.bg-1 {
+            opacity: 0;
+            z-index: 1;
+        }
+        
+        .buttondw:hover~.bg-2 {
+            opacity: .7;
+            z-index: 1;
+        }
+        
+        .bg-2 {
+            position: absolute;
+            top: 0%;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-repeat: repeat;
+            background-position: center center;
+            transition: opacity .75s;
+            background-image: url('../images/logo2.png');
+          
+            opacity: 0;
+        }
+      
+    </style> -->
+
+
+
+
+    
+    
+
+
+    <div id="footer">
+        <span title="Navigate to Behance">
+        <a class="bottom" href="https://www.behance.net/davinawooley" target="_blank" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#a1a1a1'; this.style.color='rgb(74, 74, 74)'"">Behance</a>
+       </span>
+        <div id="hyphen">|</div>
+        <span title="Navigate to LinkedIn">
+        <a class="bottom" href="https://www.linkedin.com/in/davinawooley/" target="_blank" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#a1a1a1'; this.style.color='rgb(74, 74, 74)'">LinkedIn</a></span>
+        <div id="hyphen">|</div>
+        <span title="Navigate to GitHub">
+        <a class="bottom" href="https://github.com/davinawooley" target="_blank" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#a1a1a1'; this.style.color='rgb(74, 74, 74)'">GitHub</a></span>
+        <h6> © 2022 Davina Wooley.</h6>
+    </div>
+
+
+    
+
+</body>
+</html>

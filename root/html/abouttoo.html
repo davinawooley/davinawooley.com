@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About | DEW</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon1.png" sizes="32x32" />
+    <link href="../css/abouttoo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/jil3vcw.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <script src="../scripts/abouttoo.js"></script>
+</head>
+
+
+<body>
+
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <div class="menu">
+            <div>
+                <div class="texts">
+                    <ul>
+                        <li><a href="../html/workSel.html" id="menuLinks">EXPERIMENTS</a></li>
+                        <br> <br>
+                        <li><a href="../html/abouttoo.html" id="menuLinks">EXPERIENCE</a></li>
+                        <br> <br>
+                        <li><a href="../html/abouttoo.html#skillsNav" id="menuLinks">EXPERTISE</a></li>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <a name="top"></a> -->
+    <a href="../html/home.html"><img id="homeIcon" src="../images/logo2.png" width="40px" style="float:left;"></a>
+
+
+
+
+
+  
+
+    
+    <div id="imgRight">
+        <img src="../images/dwool.jpeg" id="myPic">
+    </div>
+
+    <div id="margined">
+
+
+        <p id="underName"> Heyo, I'm Dee!</p>
+
+
+        <div id="shortBio">
+            <p id="bioBody">
+
+
+                <br>Art, Business, and Technology are my three greatest passions, and I am interested in understanding stakeholder needs to develop effective, technical, and artistic user-centered solutions. Regardless of the creative approach, digital
+                media, business problem-solving or progamming, I strive to intrigue, inform, and assist users.
+                <br>
+
+                <br> I am excited by the potential of XR to promote accessibility and inclusivity.
+                <br>
+                <br>
+
+
+                <!-- <input type="" value="" id="myInput"> -->
+                Email: <a href="mailto:davinawooley@gmail.com" value="Hello World" id="myInput">davinawooley@gmail.com</a>
+                <button type="button" id="btnCopy"><img src="../images/copyIcon.png" id="btnCopy" width ="13px"></button>
+
+                <!-- <div id="secretInfo" style="display: none;">davinawooley@gmail.com
+</div> -->
+
+                <script type="text/javascript">
+                    var $body = document.getElementsByTagName('body')[0];
+                    var $btnCopy = document.getElementById('btnCopy');
+                    // var secretInfo = document.getElementById('secretInfo').innerHTML;
+                    var secretInfo = "davinawooley@gmail.com";
+
+                    var copyToClipboard = function(secretInfo) {
+                        var $tempInput = document.createElement('INPUT');
+                        $body.appendChild($tempInput);
+                        $tempInput.setAttribute('value', "davinawooley@gmail.com")
+                        $tempInput.select();
+                        document.execCommand('copy');
+                        $body.removeChild($tempInput);
+                    }
+
+                    $btnCopy.addEventListener('click', function(ev) {
+                            copyToClipboard(secretInfo);
+
+                            alert("'davinawooley@gmail.com' has been copied to your clipboard");
+                        }
+
+
+                    );
+
+                    // ADD ALERT CONFIRMING THAT TEXT WAS COPIED TO THE CLIPBOARD
+                </script>
+
+                <br> Phone:
+                <a href="tel: +1 470-645-7646">+1 (470) 645-7646</a>
+                <br> LinkedIn:
+                <a href="https://linkedin.com/in/davinawooley" target="_blank">My Profile</a>
+                <br>
+                <br>
+
+                <div id="resUnderline">
+                    <a class="bottom" href="https://drive.google.com/file/d/1pG5o7KvmB4xyxQlgZZIeh7D8_e8zE_ix/view?usp=sharing" onmouseover="this.bgColor='white'; this.style.color='grey'" onmouseout="this.bgColor='grey'; this.style.color='white'" target="_blank"> <u><i>
+  View Resume PDF</i></u></a>
+
+                </div>
+            </p>
+        </div>
+
+
+
+        <details open>
+
+            <summary id="expandResume" onmouseover="this.bgColor='white'; this.style.color='grey'" onmouseout="this.bgColor='grey'; this.style.color='white'" target="_blank">
+                + Info Toggle
+                <br>
+                <span class="icon"></span>
+            </summary>
+
+
+
+            <!-- education start -->
+            <details open>
+
+                <summary id="addSpaceAbout">
+
+                    Education
+                    <br>
+                    <br>
+                    <span class="icon"></span>
+
+
+                </summary>
+
+                <!-- <p id = "skillsHeader "> Education<p> -->
+                <table>
+
+                    <tr>
+                        <td>Georgia Tech</td>
+                        <td>MSCS, Specialization in Human-Computer Interaction</td>
+                        <td>3.90 / 4.0 GPA</td>
+                        <td>May, 2021</td>
+
+                    </tr>
+                    <tr>
+                        <td>Wilmington University</td>
+                        <td>MBA, Management Information Systems</td>
+                        <td>3.67 / 4.0 GPA</td>
+                        <td>May, 2019</td>
+
+                    </tr>
+                    <tr>
+                        <td>Wilmington University</td>
+                        <td>BS in Business Management</td>
+                        <td>3.92 / 4.0 GPA</td>
+                        <td>May, 2018</td>
+
+                    </tr>
+                </table>
+
+                <!-- skills -->
+                <div class="skills">
+                    <br>
+
+                </div>
+            </details>
+            <!-- education end -->
+
+            <!-- experience -->
+            <details open>
+
+                <summary id="addSpaceAbout">
+                    <br>Career
+                    <span class="icon"></span>
+                </summary>
+                <!-- <p id = "skillsHeader "> Experience<p> -->
+                <br><br>
+                <table>
+                    <tr>
+                        <td>MicroTech</td>
+                        <td>Founder, CEO, Developer</td>
+                        <td>January, 2022 - Present</td>
+                    </tr>
+                    <tr>
+                        <td>NCR Corporation</td>
+                        <td>Technical Product Owner/Analyst</td>
+                        <td>July, 2021 - May, 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Georgia Tech</td>
+                        <td>Graduate Teaching Assistant</td>
+                        <td>January, 2021 - May, 2021</td>
+                    </tr>
+                    <tr>
+                        <td>OneTrust</td>
+                        <td>Instructional Design Intern</td>
+                        <td>June, 2020 - December, 2020</td>
+                    </tr>
+                    <tr>
+                        <td>Wooley Media</td>
+                        <td>Owner and Artist</td>
+                        <td>May, 2016 - May, 2020</td>
+                    </tr>
+                </table>
+
+
+                <div class="skills">
+
+                </div>
+            </details>
+            <!-- experience end -->
+
+            <!-- skills -->
+            <!-- skills -->
+            <a id="skillsNav"></a>
+            <details open>
+                <summary id="addSpaceAbout">
+                    <a id="skillsNav"></a><br> Skills
+                    <span class="icon"></span>
+                </summary>
+                <br><br>
+                <div id="shortBio"></div>
+
+                <p id="bioBody">
+                    <b id="miniHeader">General Skills</b>
+                    <br>
+                </p>
+
+                <table>
+                    <tr>
+                        <td>UI/UX</td>
+                        <td>Graphic Design</td>
+                        <td>Interaction Design</td>
+                    </tr>
+
+                    <tr>
+                        <td>Augmented Reality</td>
+                        <td>Motion Design</td>
+                        <td>DSLR Photography</td>
+                    </tr>
+                    <tr>
+                        <td>Product Design</td>
+                        <td>Prototyping</td>
+                        <td>Artificial Intelligence</td>
+                    </tr>
+                    <tr>
+                        <td>Web Development</td>
+                        <td>3D Modeling</td>
+                        <td>Digital Video Production</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Mobile Development</td>
+                        <td>Typography</td>
+                        <td>Generative Systems</td>
+                    </tr>
+
+
+                </table>
+
+
+                <div class="skills"></div>
+                <br><br>
+                <br>
+                <p id="bioHead">
+                    <b id="miniHeader">Technical Skills</b><br></b>
+                </p>
+
+                <div class="skills">
+                    <li>
+
+                        <h3>Java</h3>
+                        <h5 id="javaPercent ">33%</h5>
+
+                        <span class="bar"><span class="html"></span></span>
+
+                    </li>
+
+                    <li>
+                        <h3>C#</h3>
+                        <h5 id="cPercent ">33%</h5>
+                        <span class="bar ">
+
+<span class="css "></span></span>
+                        <!-- skill bar 2 -->
+                    </li>
+
+                    <li>
+                        <h3>Python</h3>
+                        <h5 id="pythonPercent ">33%</h5>
+                        <span class="bar ">
+<span class="javascript "></span></span>
+                        <!-- skill bar 3 -->
+                    </li>
+
+
+
+
+                    <li>
+                        <h3>Node JS/Vue/React</h3>
+                        <h5 id="reactPercent ">33%</h5>
+                        <span class="bar "><span class="jquery "></span></span>
+                        <!-- skill bar 4 -->
+                    </li>
+                    <li>
+                        <h3>HTML5/CSS3</h3>
+                        <h5 id="htmlPercent ">33%</h5>
+                        <span class="bar "><span class="html "></span></span>
+                        <!-- skill bar 1 -->
+                    </li>
+                    <li>
+                        <h3>Javascript/Three.js</h3>
+
+                        <h5 id="jsPercent ">33%</h5>
+                        <span class="bar "><span class="javascript "></span></span>
+                        <!-- skill bar 3 -->
+                    </li>
+
+                    <li>
+                        <h3>Unity/C4D</h3>
+                        <h5 id="unityPercent ">33%</h5>
+                        <span class="bar "><span class="html "></span></span>
+                        <!-- skill bar 1 -->
+                    </li>
+
+                    <li>
+                        <h3>Ruby/Rails</h3>
+
+                        <h5 id="mayaPercent ">33%</h5>
+                        <span class="bar "><span class="css "></span></span>
+                        <!-- skill bar 2 -->
+                    </li>
+
+                    <li>
+                        <h3>PHP</h3>
+                        <h5 id="ppPercent ">85%</h5>
+                        <span class="bar "><span class="html "></span></span>
+                        <!-- skill bar 1 -->
+                    </li>
+
+                    <li>
+                        <h3>Touch Designer</h3>
+                        <h5 id="houdiniPercent ">33%</h5><span class="bar "><span class="jquery "></span></span>
+                        <!-- skill bar 4 -->
+                    </li>
+
+                    <li>
+                        <h3>openFrameworks</h3>
+                        <h5 id="webglPercent ">33%</h5><span class="bar "><span class="jquery "></span></span>
+                        <!-- skill bar 4 -->
+                    </li>
+
+                </div>
+
+
+                <div id="shortBio">
+                    <br>
+                    <br>
+                    <p id="">
+                        <b id="miniHeader2">Additional Skills:</b><br>
+
+                        <div id="makeWhite2">
+                            WebGL, GLSL, Figma, Adobe XD, Sketch, After Effects, <br> Premiere Pro, Illustrator, Photoshop, AR Core, SQL,<br> 8th Wall, Spark AR</div>
+                    </p>
+                </div>
+                </p>
+            </details>
+            <!-- skills end  -->
+            <!-- certification -->
+
+
+            <!-- start certification -->
+
+            <details open>
+                <summary>
+                    <br><br> Certifications
+                    <span class="icon"> </span>
+                </summary>
+
+                <div id="makeWhite">
+                    <table>
+                        <tr>
+                            <td>Cybersecurity Foundations</td>
+                            <td>LinkedIn Credential</td>
+                            <td>Jan, 2021</td>
+                        </tr>
+
+                        <tr>
+                            <td>Master the Fundamentals of AI and ML</td>
+                            <td>LinkedIn Credential</td>
+                            <td>Oct, 2020</td>
+                        </tr>
+                        <tr>
+                            <td>Elearning Essentials: Instructional Design</td>
+                            <td>LinkedIn Credential</td>
+                            <td>June, 2020</td>
+                        </tr>
+                        <tr>
+                            <td>AR and Video Streaming Services Emerging Technology</td>
+                            <a href=" ">
+                                <td>Coursera Credential</td>
+                            </a>
+                            <td>May, 2020</td>
+                        </tr>
+                        <tr>
+                            <td>Google Cloud Platform: Big Data and Machine Learning Fundamentals</td>
+                            <td><a href="https://www.coursera.org/account/accomplishments/certificate/DV9G8AUXETMW ">Coursera Credential</a></td>
+                            <td>May, 2020 </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+
+            </details>
+
+            <!--end of more -->
+
+
+            <div id="back-to-top-wrapper">
+                <br> <br>
+
+                <a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault() " class="back-to-top-link">up top</a>
+
+            </div>
+
+        </details>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- skill end -->
+
+
+        <!-- certifications -->
+        <!-- collabsible -->
+
+
+
+
+        <!-- </details> -->
+
+
+        <!-- </summary> -->
+
+
+
+
+
+        <!-- collabsible end-->
+
+
+
+
+
+
+
+
+    </div>
+
+    <div id="footer">
+        <h6> © 2022 Davina Wooley. <br> All rights reserved.</h6>
+    </div>
+</body>
+
+</html>

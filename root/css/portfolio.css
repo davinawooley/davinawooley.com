@@ -1,0 +1,133 @@
+
+body{
+    background-color:rgb(2, 7, 12);
+    color: silver;
+    margin-top: 2%;
+    margin-left: 4%;
+    padding-left: 2%;
+    scroll-behavior: smooth;
+    }
+/* here */
+img{
+         padding-left: 2%;
+        display: inline;
+      
+    }
+
+      #head{
+    float: right;
+    margin-bottom: 200px;
+    
+    }
+
+
+
+    #homeIcon{
+        padding-left: 2%;
+        top: 50px;
+    }
+    #homeLink{
+        text-decoration: line-through;
+        display: inline;
+    }
+        a{
+            color: white;
+            text-decoration: none;
+              
+        }
+
+        ul{
+            display: inline-block;
+        }
+
+        li{
+            display: inline-block;
+            text-align: right;
+            padding-right: 10px;
+            font-family: magneta, serif;
+            font-weight: 400;
+            font-style: normal;
+          }
+
+/* here */
+    
+
+h1{
+    text-align: center;
+   font-size: 3000px;
+   min-height: 10em;
+   display: table-cell;
+   vertical-align: middle;
+   letter-spacing: 10px; 
+  font-family: rubik, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+
+#selectedWorks{
+    margin-top: 1000px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 53%;
+   
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle; 
+ }
+
+h3{
+    font-family: korolev-compressed,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-left: 30px;
+}
+a{
+    display: inline;
+     padding: 7px;
+    margin: -7px;}
+#allWorks{
+    top: 10%;
+    left: 50%;
+   
+}
+
+h6{color: rgb(74, 74, 74);
+    font-size: small;}
+
+h4{
+    top: 5%;
+    display: inline;
+}
+
+
+
+#footer{
+    
+    text-align: center;
+    letter-spacing: 1px;
+  bottom: 5%;
+  width: 100%;
+ 
+}
+p{
+    text-align: center;
+color: rgb(74, 74, 74);
+
+}
+#workNavigation{
+    width: 100%;
+    position: relative;
+    float:left;
+}
+  
+    #homeLink{
+        text-decoration: line-through;
+        display: inline;
+        }
