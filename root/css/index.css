@@ -1,6 +1,7 @@
 body {
     /* background-color:rgb(222, 220, 220); */
-    background-color:rgb(242, 242, 242);
+    /* background-color:rgb(242, 242, 242); */
+    background-color:rgb(255, 255, 255);
     margin-top: 2%;
     scroll-behavior: smooth;
     
@@ -172,7 +173,7 @@ h2 {
  line-height: 1px;
  position: relative;
  font-family: jubilat-thin,serif;
-font-weight: 200;
+font-weight: 700;
 font-style: normal;
  color: rgb(28, 28, 28);
 }
@@ -611,9 +612,7 @@ a.bottom:hover:before {
 .menu-wrap .menu>div {
     background: var(--overlay-color);
     border-radius: 10%;
-    /* width: 100vw; */
-    /* height: 100vw; */
-    /* display: flex; */
+ 
     flex: none;
     align-items: center;
     justify-content: center;
