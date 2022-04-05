@@ -9,10 +9,13 @@ body {
 #divideTab {
     padding-right: 4em;
     padding-left: 4em;
-    font-size: .9em;
+    font-size: 1em;
     cursor: default;
     align-items: center;
-    vertical-align: middle;
+   vertical-align: middle; 
+    display: table-cell; 
+    /* vertical-align: middle;
+    vertical-align: auto; */
 }
 
 .my-element {
@@ -28,6 +31,10 @@ img {
 #texts {
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    display: table;
+     /* height:300px;  */
+     overflow: hidden;
+ 
 }
 
 #homeIcon {
@@ -351,6 +358,9 @@ a {
 
     #divideTab {
       display: none;
+      display: table-cell; 
+    vertical-align: middle;
+    vertical-align: auto;
     }
 
  

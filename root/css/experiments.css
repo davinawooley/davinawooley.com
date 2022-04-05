@@ -1,6 +1,6 @@
 body {
     background-color:rgb(244, 244, 244);
-    color: silver;
+    /* color: silver; */
     margin-top: 2%;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -276,6 +276,8 @@ a {
         word-spacing: 10px;
     }
     p {
+        /* color: rgb(179, 179, 179); */
+        /* color:#747474; */
         color: rgb(179, 179, 179);
     }
 }
@@ -594,15 +596,16 @@ a.bottom:hover:before {
 }
 
 #bioBody {
-font-family: jubilat-thin,serif;
+font-family: jubilat,serif;
 font-weight: 200;
 font-style: normal;
 letter-spacing: 2px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     text-align: left;
     width: 875px;
-    color: rgb(28, 28, 28);
+    /* color: rgb(28, 28, 28); */
+    color:#747474;
 }
 
 
