@@ -203,13 +203,15 @@ h1 {
 }
 
 #underName {
-    padding-top: 300px;
+    /* padding-top: 300px; */
     letter-spacing: 3px;
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
     position: relative;
-    font-size: 80px;
+ 
+    font-size: 13px;
+    /* line-height: .1; */
 }
 
 #myPic {
@@ -364,7 +366,7 @@ h2 {
     font-style: normal;
     letter-spacing: 10px;
     font-size: 80px;
-    padding-top: 250px;
+    padding-top: 300px;
     color:#747474;
 }
 
@@ -528,6 +530,7 @@ a {
         letter-spacing: 8px;
         font-size: 10vw;
         padding-top:10%;
+        
           }
     #shortBio{
         position: static;
