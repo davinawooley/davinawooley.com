@@ -1,15 +1,16 @@
 body {
 
-    background-color:rgb(255, 255, 255);
-    color: silver;
+    background-color:rgb(244, 244, 244);
     margin-top: 2%;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-text-size-adjust: auto;
 }
 hr{
     width:85%;
     margin-left: 0px;
 }
+
 #myInput{
     font-size: 14px;
    
@@ -145,9 +146,23 @@ ul {
 
 li {
     display: inline-block;
+    text-align: center;
     font-family: magneta, serif;
     font-weight: 400;
     font-style: normal;
+}
+/* li {
+    list-style-type: none;
+    font-family: sans-serif;
+    font-family: rubik, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+} */
+li {
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    /* white-space: nowrap; */
 }
 
 #sideLinks {
@@ -155,7 +170,7 @@ li {
     right: 80%;
     display: inline;
     margin-right: 2vw;
-    position: absolute;
+    /* position: absolute; */
     right: 0;
     -webkit-transform-origin: left top;
     -webkit-transform: rotate(-90deg) translateX(-100%);
@@ -263,13 +278,7 @@ h3 {
 }
 
 
-li {
-    list-style-type: none;
-    font-family: sans-serif;
-    font-family: rubik, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-}
+
 
  /* back to top */
 
@@ -288,15 +297,7 @@ li {
 }
 
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-    #homeIcon{
-        position: relative;
-    }
-  
-}
+
 
 html {
     scroll-behavior: smooth;
@@ -840,6 +841,7 @@ a.bottom:hover:before {
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
+    left: 1vw;
 }
 
 .menu-wrap .menu>div>div>ul>li>a {
@@ -976,7 +978,7 @@ li {
     float: left;
     vertical-align: middle;
     text-align: center;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 #sideLinks {
@@ -1110,7 +1112,9 @@ a {
         display: inline;
         align-items: center;
         justify-content: center;
+        hite-space: nowrap;
     }
+    body{  overflow-x: scroll;}
 
     #divideTab {
       display: none;
@@ -1118,11 +1122,24 @@ a {
 
     #menuLinks {
         font-size: 3.5vw;
-        margin-right: 3vw;   
+        margin-right: 3vw; 
+        /* white-space: nowrap;   */
     }
 
     ul{
         margin-right: 1rem;
+        /* white-space: nowrap; */
+    }
+    .menu-wrap .menu>div>div>ul>li {
+        list-style: none;
+        color: #747474;
+        font-size: .5vw;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-top: -20vh;
+        line-break: normal;
+        /* white-space: nowrap; */
     }
 }
 
@@ -1156,7 +1173,7 @@ a.bottom:hover:before {
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    /* position: absolute; */
     min-width: 160px;
     z-index: 1;
 }
@@ -1182,7 +1199,9 @@ a.bottom:hover:before {
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
+    /* white-space: nowrap; */
 }
+
 
 .btn {
     display: inline-block;
@@ -1204,6 +1223,7 @@ a.bottom:hover:before {
     font-weight: 400;
     font-style: normal;
     font-size: 5px;
+    /* white-space: nowrap; */
 }
 
 .btn:hover {
@@ -1344,6 +1364,8 @@ a.bottom:hover:before {
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
+    /* margin-top: -20vh; */
+    /*  */
     line-break: normal;
 }
 
@@ -1351,4 +1373,58 @@ a.bottom:hover:before {
     color: inherit;
     text-decoration: none;
     transition: color 0.4s ease;
+}
+
+
+
+
+
+
+@media screen and (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+    #homeIcon{
+        position: relative;
+    }
+    .menu-wrap .menu>div>div>ul>li {
+        list-style: none;
+        color: #747474;
+        font-size: .5vw;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-top: 3vh;
+        line-height: 70vh;
+        /* white-space: nowrap; */
+   
+    }
+    .menu {
+        text-align: right;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+        line-height: 15px;
+    }
+    .text {
+        text-align: right;
+        min-height: 10em;
+        display: table-cell;
+        vertical-align: middle;
+        letter-spacing: 10px;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 5px;
+
+        line-height: 15px;
+  
+    }
+  
+}
+
+#margined {
+    margin-left: 15%;
+    margin-right: 15%;
 }
