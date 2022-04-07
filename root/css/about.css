@@ -121,7 +121,7 @@ img {
     font-weight: 200;
     font-style: normal;
     letter-spacing: 2px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     text-align: left;
     width: 65%;
@@ -358,11 +358,12 @@ li {
 
 h2 {
     color: rgb(74, 74, 74);
-    font-size: 12px;p{}
+    font-size: 12px;
     position: relative;
 }
 
 #underName {
+    
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -412,7 +413,7 @@ a {
     font-weight: 200;
     font-style: normal;
     letter-spacing: 2px;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 24px;
     text-align: left;
     width: 45vw;
