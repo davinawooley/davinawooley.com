@@ -543,6 +543,7 @@ a.bottom:hover:before {
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
+    left: 1vw;
 }
 
 .menu-wrap .menu>div>div>ul>li>a {
@@ -808,7 +809,7 @@ th,
         }
 
         #underName{
-            font-size: 10vw;
+            /* font-size: 10vw; */
             letter-spacing: 1px;
             font-size: 10vw;
         }
@@ -1013,7 +1014,7 @@ a {
     }
 }
 
-@media (max-width: 500px) 
+@media (max-width: 500px){ 
 
     .menu-wrap .menu {
         right: 10%;
