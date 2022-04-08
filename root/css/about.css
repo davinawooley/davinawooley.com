@@ -220,15 +220,18 @@ h1 {
 
 #underName {
     /* padding-top: 300px; */
-    letter-spacing: 3px;
+    letter-spacing: 10px;
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
     position: relative;
  
-    font-size: 13px;
+    font-size: 80px;
+    padding-top: 300px;
+    color:#747474;
     /* line-height: .1; */
 }
+
 
 #myPic {
     height: 400px;
@@ -362,16 +365,7 @@ h2 {
     position: relative;
 }
 
-#underName {
-    
-    font-family: rubik, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 10px;
-    font-size: 80px;
-    padding-top: 300px;
-    color:#747474;
-}
+
 
     #footer {
         display: table;
@@ -498,7 +492,7 @@ a {
 }
 
 
-@media (max-width: 1000px)
+@media (max-width: 1050px)
  {
     h1 {
         white-space: nowrap;
@@ -528,10 +522,10 @@ a {
 
     #underName {
         position: static;
-        font-family: rubik, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: 8px;
+        /* font-family: rubik, sans-serif;
+        font-weight: 400; */
+        /* font-style: normal; */
+        letter-spacing: 1px;
         font-size: 10vw;
         padding-top:10%;
         
@@ -615,6 +609,10 @@ a {
         margin-right: auto;
         border: 2px solid silver;
         padding: 10px;
+    }
+    #margined {
+        margin-left: 15%;
+        margin-right: 15%;
     }
 }
 

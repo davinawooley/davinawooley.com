@@ -14,8 +14,6 @@ body {
     align-items: center;
    vertical-align: middle; 
     display: table-cell; 
-    /* vertical-align: middle;
-    vertical-align: auto; */
 }
 
 .my-element {
@@ -32,7 +30,6 @@ img {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     display: table;
-     /* height:300px;  */
      overflow: hidden;
  
 }
