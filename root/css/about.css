@@ -1366,8 +1366,6 @@ a.bottom:hover:before {
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
-    /* margin-top: -20vh; */
-    /*  */
     line-break: normal;
 }
 
@@ -1376,11 +1374,6 @@ a.bottom:hover:before {
     text-decoration: none;
     transition: color 0.4s ease;
 }
-
-
-
-
-
 
 @media screen and (prefers-reduced-motion: no-preference) {
     html {
@@ -1398,15 +1391,12 @@ a.bottom:hover:before {
         font-style: normal;
         margin-top: 3vh;
         line-height: 70vh;
-        /* white-space: nowrap; */
-   
     }
     .menu {
         text-align: right;
         font-family: rubik, sans-serif;
         font-weight: 400;
         font-style: normal;
-
         line-height: 15px;
     }
     .text {
@@ -1419,11 +1409,8 @@ a.bottom:hover:before {
         font-weight: 400;
         font-style: normal;
         font-size: 5px;
-
         line-height: 15px;
-  
     }
-  
 }
 
 #margined {
