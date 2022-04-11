@@ -106,9 +106,7 @@ img {
     margin-top: 20px;
     margin-left: 3%;
     position:fixed;
-  
     width:50px;
-  
 }
 
 #homeLink {
@@ -1379,9 +1377,7 @@ a.bottom:hover:before {
     html {
         scroll-behavior: smooth;
     }
-    #homeIcon{
-        position: relative;
-    }
+  
     .menu-wrap .menu>div>div>ul>li {
         list-style: none;
         color: #747474;

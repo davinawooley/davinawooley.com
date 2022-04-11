@@ -68,8 +68,9 @@ img {
 #homeIcon {
     padding-bottom: 5px;
     margin-top: 20px;
-    margin-left: 2%;
+    margin-left: 3%;
     position: fixed;
+    width:50px;
 }
 
 #homeLink {
@@ -198,9 +199,7 @@ a {
 
 
 @media(max-width:500px) {
-    #homeIcon {
-        width:50px;
-    }
+  
     body{
         overflow: scroll;  
         overflow-x: scroll;   
@@ -273,9 +272,7 @@ screen and( min-width: 500px) {
         white-space: nowrap;
     }
 
-    #homeIcon{
-        width: 50px;
-    }
+ 
 
     .menu-wrap .menu {
         position: fixed;
@@ -804,8 +801,8 @@ th,
 
     @media screen and (max-width: 1050px){
         #margined{
-            margin-left: 5%;
-            margin-right: 5%;  
+            margin-left: 15%;
+            margin-right: 15%;  
         }
 
         #underName{
@@ -832,9 +829,7 @@ th,
             
         }
 
-        #homeIcon{
-            position: relative;
-        }
+       
 
         #descriptName{
             font-size: 11.5px;

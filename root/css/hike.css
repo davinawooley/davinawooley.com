@@ -169,37 +169,20 @@ h2 {
 
 
     #footer {
-        /* display: table;
+        font-family: jubilat-thin,serif;
+        font-weight: 200;
+        font-style: normal;
+        letter-spacing: 2px;
+
+        display: table;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-
+        padding-top: 8px;
         letter-spacing: 1px;
-        color: rgb(74, 74, 74);
-        font-size: 15px; */
-
-        bottom: 0px;
-        width: 100%;
-        /* position: relative; */
-        /* text-align: center; */
-        /* text-align: center; */
-        /* font-size: 13px; */
-        /* padding-right: 20px;
-          right: 200px; */
-        /* padding-top: 50px; */
-              display: table;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
- /* padding-top: 8px; */
-        letter-spacing: 1px;
-        /* color: rgb(74, 74, 74); */
-
         color: rgb(74, 74, 74);
         font-size: 13px;
-
-
-
+        z-index: 20000;
   
     }
 
@@ -259,13 +242,9 @@ a {
     #footer {
         bottom: 0px;
         width: 100%;
-        /* position: relative; */
         text-align: center;
         text-align: center;
         font-size: 13px;
-        /* padding-right: 20px;
-          right: 200px; */
-        /* padding-top: 50px; */
     }
     #bottomLinks {
         word-spacing: 10px;
@@ -304,7 +283,7 @@ screen and( min-width: 500px) {
         margin-left: 1%;
     }
     #footer {
-        /* position: fixed; */
+
         bottom: 0;
         width: 100%
     }
