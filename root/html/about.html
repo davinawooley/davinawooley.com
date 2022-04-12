@@ -42,7 +42,6 @@
                     <ul>
                         <li><a href="../html/about.html" id="menuLinks">ABOUT</a></li>
                         <li id="divideTab">|</li>
-
                         <li><a href="../html/experiments.html" id="menuLinks">EXPERIMENTS</a></li>
                     </ul>
                 </div>
@@ -51,18 +50,16 @@
     </div>
 
     <a href="../html/index.html"><img id="homeIcon" src="../images/dewLogo.png" width="40px" style="float:left;"></a>
-        <!-- <img src="../images/dwool.jpeg" id="myPic"> -->
 
     <div id="margined">
         <div id="shortBio">
         <p id="underName"> Heyo, I'm Davina!</p>
         </div>
-        <!-- <div id="shortBio"> -->
             <p id="bioBody">
                Art, Business, and Technology are my three greatest passions, and I am interested in understanding stakeholder needs to develop effective, technical, and artistic user-centered solutions. Regardless of the creative approach, digital
                 media, business problem-solving or progamming, I strive to intrigue, inform, and assist users.
                 <br><br> I am excited by the potential of XR to promote accessibility and inclusivity.
-<br><br>Fmed
+                <br><br>
 
                 <b>Email:</b> 
                 
@@ -78,12 +75,9 @@
             
                 <br><br>
 
-
                     <a class="bottom" href="../images/davina_wooley_resume.pdf" target="_blank" id="resume" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#a1a1a1'; this.style.color='rgb(74, 74, 74)'"> <u><i>
                         <span title="Open PDF in Browser"> View Resumé </span></i></u></a>
-
                 <br><br>
-                
             </p>
         
 
@@ -106,28 +100,25 @@
 
                     alert("'davinawooley@gmail.com' has been copied to your clipboard");
                 }
-
-
             );
         </script>
-
           
             <a id="skillsNav"></a>
                 <div id="headerStyling">
                     <br><br>Skills
                     <span class="icon"></span>
                 </div>
-                <!-- <hr> -->
+
                 <br>
                 <div id="shortBio"></div>
                 <table id="noStyleTable">
                     <tr>
-                        <td>   <img src="../images/bullet_logo.png" style="height:6px" id="bullet">Software Development</td>
+                        <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Software Development</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">UI / UX</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Creative Coding</td>  
                     </tr>
+
                     <tr>
-                      
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Interaction Design</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">HCI</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">3D Modeling / Printing</td>
@@ -137,28 +128,21 @@
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">XR</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Motion Design</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Graphic Design</td>
-                        
                     </tr>
+
                     <tr>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Videography</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Video Editing</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">DSLR Photography</td>
-                        
-                    
                     </tr>
 
                     <tr>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Instructional Design</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Business Intelligence</td>
                         <td><img src="../images/bullet_logo.png" style="height:6px" id="bullet">Database / Schema Design</td>
-                     
-                    
                     </tr>
-
-               
                 </table>
                 <br><br>
-
                 <div id="shortBio"></div>
                 <div id="headerStyling">
                     <br><br> 
@@ -174,7 +158,6 @@
                     <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">Javascript</td>
                     <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">Python</td>
                     <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">SQL</td> 
-                    <!-- <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">Three.js</td> -->
                 </tr>
 
 
@@ -190,7 +173,6 @@
                     <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">Cinema 4D</td>
                     <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">Unity</td>
                     <td><img src="../images/bullet_logo.png" style="height:7px" id="bullet">After Effects</td>
-                
                 </tr> 
 
                 <tr> 
@@ -201,9 +183,7 @@
                 </tr>   
                 </table>
                 </p>
-    
 <style>
-
     
     #myBtn {
       display: none;
@@ -215,37 +195,33 @@
       outline: none;
       cursor: pointer;
       padding: 15px;
-
     }
     
-
     </style>
 
+    <button onclick="topFunction()" id="myBtn" title="Scroll to Top" class="back-to-top-link"><img src="../images/upArrow.png" width="30px"></button>
 
-<button onclick="topFunction()" id="myBtn" title="Scroll to Top" class="back-to-top-link"><img src="../images/upArrow.png" width="30px"></button>
+    <script>
+    var mybutton = document.getElementById("myBtn");
 
+    window.onscroll = function() {scrollFunction()};
 
-<script>
-var mybutton = document.getElementById("myBtn");
+    function scrollFunction() {
+    if (document.body.scrollTop > 750 || document.documentElement.scrollTop > 750) {
+        mybutton.style.display = "block";
+        
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 750 || document.documentElement.scrollTop > 750) {
-    mybutton.style.display = "block";
-    
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
-
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+    </script>
     </div>
+
     <div id="footer">
         <span title="Navigate to Behance">
             <a class="bottom" href="https://www.behance.net/davinawooley" target="_blank" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#a1a1a1'; this.style.color='rgb(74, 74, 74)'">Behance</a>
@@ -258,5 +234,6 @@ function topFunction() {
             <a class="bottom" href="https://github.com/davinawooley" target="_blank" onmouseover="this.bgColor='white'; this.style.color='#a1a1a1'" onmouseout="this.bgColor='#a1a1a1'; this.style.color='rgb(74, 74, 74)'">GitHub</a></span>
             <h6> © 2022 Davina Wooley.</h6>
     </div>
+    
 </body>
 </html>
