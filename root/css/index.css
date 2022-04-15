@@ -167,13 +167,13 @@ h2 {
 }
 
 #underName {
- text-align: center;
- line-height: 1px;
- position: relative;
- font-family: jubilat-thin,serif;
-font-weight: 700;
-font-style: normal;
- color: rgb(28, 28, 28);
+    text-align: center;
+    line-height: 1px;
+    position: relative;
+    font-family: jubilat-thin,serif;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(28, 28, 28);
 }
 
 #footer {
@@ -238,6 +238,7 @@ a {
         display: inline;
         letter-spacing: 5px;
     }
+
     #divideLine {
         color:#747474;
         font-family: jubilat-thin,serif;
@@ -245,16 +246,17 @@ a {
         font-style: normal;
 
     }
+
     #bottomLinks {
         white-space: nowrap;
         top: 90%;
     }
+
     body {
         margin-left: 10px;
         margin-bottom: 2px;
-            
-    /* overflow-x: hidden; */
     }
+
     #footer {
         bottom: 0px;
         width: 100%;
@@ -281,8 +283,6 @@ a {
 {
     h1 {
         white-space: nowrap;
-        /* text-shadow: 0px 0px 1px #bfbfbf; */
-        
     }
 
     body{  overflow-x: scroll;}
@@ -296,11 +296,13 @@ a {
         align-items: center;
         justify-content: center;
     }
+
     h2 {
         display: inline;
         letter-spacing: 7px;
         white-space: nowrap;
     }
+
     #divideLine {
         color:#747474;
         margin-right: 1%;
@@ -310,6 +312,7 @@ a {
         font-style: normal;
         font-size: 9.5px;
     }
+
     #footer {
         position: fixed;
         bottom: 0;
@@ -322,7 +325,6 @@ a {
         white-space: nowrap;
         letter-spacing: 0.25em;
         font-size: 4.0vw;
-        
     }
 
     body{  overflow-x: scroll;}
@@ -334,7 +336,6 @@ a {
     transform: translateY(-90%);
     transform: translateX(-50%);
     }
-
 
     .menu-wrap .menu {
         right: 10%;
@@ -354,19 +355,18 @@ a {
     }
 
     #divideTab {
-      display: none;
-      display: table-cell; 
-    vertical-align: middle;
-    vertical-align: auto;
+        display: none;
+        display: table-cell; 
+        vertical-align: middle;
+        vertical-align: auto;
     }
-
- 
 
     #footer {
         position: fixed;
         bottom: 0;
         width: 100%
     }
+    
     #menuLinks {
         font-size: 3.5vw;
         margin-right: 3vw;   
@@ -374,12 +374,8 @@ a {
 
     ul{
         margin-right: 1rem;
-    }
-
-    
+    }   
 }
-
-
 
 a.bottom {
     position: relative;
@@ -397,9 +393,6 @@ a.bottom:hover:before {
     overflow: hidden;
 }
 
-
-/* Dropdown button */
-
 .dropdown .dropbtn {
     font-size: 15px;
     border: none;
@@ -407,8 +400,6 @@ a.bottom:hover:before {
     background-color: inherit;
     font-family: inherit;
 }
-
-/* Add a red background color to navbar links on hover */
 
 .dropdown-content {
     display: none;
