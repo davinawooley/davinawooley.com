@@ -222,7 +222,6 @@ h1 {
     font-size: 80px;
     padding-top: 300px;
     color:#747474;
-    /* line-height: .1; */
 }
 
 
@@ -1109,6 +1108,14 @@ a {
         justify-content: center;
         white-space: nowrap;
     }
+    
+    #underName {
+        font-style: normal;
+        position: relative;
+        padding-top: 100px;
+        color:#747474;
+    }
+
     body{  overflow-x: scroll;}
 
     #divideTab {
