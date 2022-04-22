@@ -1,5 +1,4 @@
 body {
-
     background-color:rgb(244, 244, 244);
     margin-top: 2%;
     scroll-behavior: smooth;
@@ -11,10 +10,6 @@ hr{
     margin-left: 0px;
 }
 
-/* #myInput{
-    font-size: 14px;
-   
-} */
 .container {
     align-content: flex-start
   }

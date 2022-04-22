@@ -12,7 +12,7 @@ body {
     font-size: 1em;
     cursor: default;
     align-items: center;
-   vertical-align: middle; 
+    vertical-align: middle; 
     display: table-cell; 
 }
 
@@ -30,8 +30,7 @@ img {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     display: table;
-     overflow: hidden;
- 
+    overflow: hidden;
 }
 
 #homeIcon {
@@ -221,7 +220,7 @@ a {
     text-shadow: 0px 1px 2px rgb(237, 237, 237);
 }
 
-@media(max-width:1000px),(max-height:500px) {
+@media(max-width:1000px){
     #nameTitle {
         top: 50%;
         height: .2vh;
@@ -279,7 +278,7 @@ a {
     }
 }
 
-@media (min-width: 500px)
+@media (min-width: 600px)
 {
     h1 {
         white-space: nowrap;
@@ -313,28 +312,23 @@ a {
         font-size: 9.5px;
     }
 
-    #footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%
-    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h1 {
         white-space: nowrap;
-        letter-spacing: 0.25em;
+        letter-spacing: 0.4em;
         font-size: 4.0vw;
     }
 
     body{  overflow-x: scroll;}
 
     #nameTitle {
-    left: 50%;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-90%);
-    transform: translateX(-50%);
+        left: 50%;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-90%);
+        transform: translateX(-50%);
     }
 
     .menu-wrap .menu {
@@ -349,16 +343,20 @@ a {
 
     h2 {
         display: inline;
-        letter-spacing: .39em;
+        letter-spacing: 1em;
         font-size: 2.6vw;
         white-space: nowrap; 
     }
 
     #divideTab {
         display: none;
-        display: table-cell; 
-        vertical-align: middle;
-        vertical-align: auto;
+
+    }
+    #divideTab {
+        padding-right: 2em;
+        padding-left: 2em;
+        font-size: .1em;
+        cursor: default;
     }
 
     #footer {
