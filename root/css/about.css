@@ -1070,9 +1070,7 @@ a {
         white-space: nowrap;
        
     }
-    body{ 
-         overflow-x: hidden;
-    }
+   
     .menu-wrap .menu {
 
         left: 30%;
@@ -1098,16 +1096,18 @@ a {
 
 @media (max-width: 500px) {
 
+
     .menu-wrap .menu {
-        right: 10%;
+        left: 30%;
+        /* width: 80%; */
+        height: 14%;
         visibility: hidden;
         overflow: hidden;
         display: flex;
-        display: inline;
         align-items: center;
         justify-content: center;
-        white-space: nowrap;
     }
+
     
     #underName {
         font-style: normal;
@@ -1115,8 +1115,14 @@ a {
         padding-top: 100px;
         color:#747474;
     }
+    #footer{
+        margin-bottom: 50px;
+    }
 
-    body{  overflow-x: scroll;}
+    body{  
+        overflow-x: hidden;
+
+}
 
     #divideTab {
       display: none;

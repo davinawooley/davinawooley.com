@@ -201,8 +201,7 @@ a {
 @media(max-width:500px) {
   
     body{
-        overflow: scroll;  
-        overflow-x: scroll;   
+        overflow-x: hidden;   
     }
  
     .back-to-top-link {
@@ -215,15 +214,19 @@ a {
         width: 5px;
         visibility: hidden;
     }
+
     #titleWork{
         white-space: nowrap;
     }
+
     #descriptName{
         white-space: nowrap;
     }
+    #footer{
+        margin-bottom: 50px;
+    }
 
     #underName {
-
     letter-spacing: 3px;
     font-family: rubik, sans-serif;
     font-weight: 400;
@@ -289,7 +292,7 @@ screen and( min-width: 500px) {
 
     .menu-wrap .menu {
         position: fixed;
-        top: 20;
+        top: -50%;
         left: 30%;
         width: 80%;
         height: 14%;
@@ -697,9 +700,7 @@ th,
         }
     }
     
-    html {
-        scroll-behavior: smooth;
-    }
+
     
     html,
     body {
@@ -738,21 +739,7 @@ th,
         font-weight: 400;
     }
     
-    #makeWhite {
-        color: rgba(104, 115, 119, 10);
-        font-family: roboto-slab, serif;
-        font-weight: 300;
-        font-size: 14px;
-    }
     
-    #makeWhite2 {
-        color: white;
-        font-size: 13px;
-        font-family: rubik, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 1.9em;
-    }
 
     a.bottom:before {
         content: "";
@@ -819,7 +806,6 @@ th,
         }
 
         #underName{
-            /* font-size: 10vw; */
             letter-spacing: 1px;
             font-size: 10vw;
         }
@@ -1024,12 +1010,14 @@ a {
 
 @media (max-width: 500px){ 
 
+
     .menu-wrap .menu {
-        right: 10%;
+        left: 30%;
+        /* width: 80%; */
+        height: 14%;
         visibility: hidden;
         overflow: hidden;
         display: flex;
-        display: inline;
         align-items: center;
         justify-content: center;
     }
@@ -1046,6 +1034,7 @@ a {
     ul{
         margin-right: 1rem;
     }  
+    body{overflow-x: hidden;}
 }
 
 
