@@ -425,7 +425,7 @@ a.bottom:hover:before {
     left: 0;
     z-index: 2;
     cursor: pointer;
-    width: 90px;
+    width: 40px;
     height: 50px;
     opacity: 0;
 }
@@ -1012,6 +1012,7 @@ a {
 
 
     .menu-wrap .menu {
+        /*  */
         left: 30%;
         /* width: 80%; */
         height: 14%;
@@ -1020,6 +1021,10 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    #margined{
+        margin-left: 5%;
+        margin-right: 5%;  
     }
 
     #divideTab {
@@ -1034,7 +1039,11 @@ a {
     ul{
         margin-right: 1rem;
     }  
-    body{overflow-x: hidden;}
+    body{
+    overflow-x: hidden;
+    }
+
+    
 }
 
 
@@ -1140,7 +1149,7 @@ a.bottom:hover:before {
     left: 0;
     z-index: 2;
     cursor: pointer;
-    width: 90px;
+    width: 40px;
     height: 50px;
     opacity: 0;
 }
@@ -1266,4 +1275,10 @@ a.bottom:hover:before {
     color: inherit;
     text-decoration: none;
     transition: color 0.4s ease;
+}
+
+body {
+
+    overflow-x: hidden;
+
 }
