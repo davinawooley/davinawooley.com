@@ -1051,9 +1051,7 @@ a {
 
     
     #divideLine {
-        /* color: rgb(55, 55, 55); */
         color:#747474;
-        
         font-family: jubilat-thin,serif;
         font-weight: 200;
         font-style: normal;
@@ -1061,6 +1059,10 @@ a {
     }
     ul{
         margin-right: 2rem;
+    }
+    #margined{
+        margin-left: 7.5%;
+        margin-right: 7.5%;  
     }
 }
 
@@ -1417,10 +1419,10 @@ a.bottom:hover:before {
     }
 }
 
-#margined {
+/* #margined {
     margin-left: 15%;
     margin-right: 15%;
-}
+} */
 body {
 
     overflow-x: hidden;
