@@ -4,76 +4,149 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
+import { gsap } from 'gsap'
+
+
 
 // Loaders
-// const gltfLoader = new GLTFLoader()
-const cubeTextureLoader = new THREE.CubeTextureLoader()
+const loadingBarElement = document.querySelector('.loading-bar')
+const loadingManager = new THREE.LoadingManager(
+    () =>
+    {
+
+        window.setTimeout(() =>
+        {
+
+            gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 , delay: 1})
+            loadingBarElement.classList.add('ended')
+            loadingBarElement.style.transform = ''
+
+        }, 500)
+    },
+
+    // Progress
+    (itemUrl, itemsLoaded, itemsTotal) =>
+    {
+        // console.log(itemUrl, itemsLoaded, itemsTotal)
+        const progressRatio = itemsLoaded / itemsTotal
+        loadingBarElement.style.transform = `scaleX(${progressRatio})`
+    }
+
+)
+const dracoLoader = new DRACOLoader()
+dracoLoader.setDecoderPath('/draco/')
+
+const gltfLoader = new GLTFLoader(loadingManager)
+gltfLoader.setDRACOLoader(dracoLoader)
+
+const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
+
+
+
+
 /**
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+const debugObject = {}
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
+
+// overlay
+const overlayGeomeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
+const overlayMaterial = new THREE.ShaderMaterial({
+    transparent : true,
+    uniforms: {
+        uAlpha:{value:1}
+    },
+    vertexShader: `
+        void main()
+        {
+            gl_Position = vec4(position, 1.0);
+        }
+    `,
+    fragmentShader: `
+        uniform float uAlpha;
+        void main()
+        {
+            gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);
+
+            
+        }
+    `
+})
+const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
+scene.add(overlay)
+
+// update all materials
+
+const updateAllMaterials = () =>
+{
+    scene.traverse((child) =>
+    {
+        if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
+        {
+            // child.material.envMap = environmentMap
+            child.material.envMapIntensity = debugObject.envMapIntensity
+            child.material.needsUpdate = true
+            child.castShadow = true
+            child.receiveShadow = true
+
+            child.geometry.computeBoundingBox();
+            child.geometry.boundingBox.expandByScalar(2);
+        }
+    })
+}
+
+
+
 // environment map
-const environmentMap = cubeTextureLoader.load(['/textures/environmentMaps/0/px.jpg',
+const environmentMap = cubeTextureLoader.load(['../ ../images/dew.jpg',
 '/textures/environmentMaps/0/nx.jpg',
 '/textures/environmentMaps/0/py.jpg',
 '/textures/environmentMaps/0/ny.jpg',
 '/textures/environmentMaps/0/pz.jpg',
 '/textures/environmentMaps/0/nz.jpg'
 ])
+
 environmentMap.encoding = THREE.sRGBEncoding
+
 scene.background = environmentMap
 scene.environment = environmentMap
 
+debugObject.envMapIntensity = 2.5
 
 /**
  * Models
  */
-const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('/draco/')
 
-const gltfLoader = new GLTFLoader()
-gltfLoader.setDRACOLoader(dracoLoader)
 
 let mixer = null
+
 
 gltfLoader.load(
     '/models/dewModel.glb',
     (gltf) =>
     {
          
-        gui.add(gltf.scene.rotation, 'y').min(- Math.PI/2).max(Math.PI/2).step(0.001).name('rotation')
+        gltf.scene.rotation.min = (-Math.PI/2)
+        gltf.scene.rotation.max = (Math.PI/2)
         gltf.scene.scale.set(0.35, 0.35, 0.35)
-        gltf.scene.rotation.y = Math.PI/4
+        gltf.scene.rotation.y = Math.PI*.5
+        // gltf.scene.scale.set(10, 10, 10)
+        gltf.scene.position.set(-5, - 4, 0)
+        // gltf.scene.rotation.y = Math.PI 
         scene.add(gltf.scene)
 
-        // Animation
-        mixer = new THREE.AnimationMixer(gltf.scene)
-        const action = mixer.clipAction(gltf.animations[2])
-        action.play()
+        updateAllMaterials()
     }
 )
 
-/**
- * Floor
- */
-// const floor = new THREE.Mesh(
-//     new THREE.PlaneGeometry(10, 10),
-//     new THREE.MeshStandardMaterial({
-//         color: 'black',
-//         metalness: 0,
-//         roughness: 0.5
-//     })
-// )
-// floor.receiveShadow = true
-// floor.rotation.x = - Math.PI * 0.5
-// scene.add(floor)
 
 /**
  * Lights
@@ -92,7 +165,10 @@ directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 5, 0)
 scene.add(directionalLight)
-gui.add(directionalLight.position,'x').min(0).max(10).step(0.001).name('lightIntensity')
+// gui.add(directionalLight.position,'x').min(0).max(10).step(0.001).name('lightIntensity')
+
+
+
 
 
 /**
@@ -124,15 +200,16 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(5, 4, -7)
+
+camera.position.set(5, 4, 0)
 scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.minAzimuthAngle =.5; 
-controls.maxAzimuthAngle = Math.PI*3; 
-controls.target.set(0, 1.0, 0)
-controls.enableDamping = true
+controls.maxAzimuthAngle = Math.PI; 
+controls.target.set(0, 0, 0)
+controls.enableDamping = true 
 
 /**
  * Renderer
@@ -141,6 +218,7 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas, 
     antialias: true
 })
+
 renderer.shadowMap.enabled = true
 renderer.physicallyCorrectLights = true
 renderer.shadowMap.type = THREE .PCFSoftShadowMap
@@ -150,6 +228,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 renderer.toneMappingExposure = 2
+
 
 
 
