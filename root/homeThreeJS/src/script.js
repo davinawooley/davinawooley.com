@@ -42,8 +42,6 @@ gltfLoader.setDRACOLoader(dracoLoader)
 const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
 
 
-
-
 /**
  * Base
  */
@@ -91,17 +89,21 @@ const updateAllMaterials = () =>
     {
         if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
         {
-            // child.material.envMap = environmentMap
+            child.material.envMap = environmentMap
             child.material.envMapIntensity = debugObject.envMapIntensity
             child.material.needsUpdate = true
             child.castShadow = true
             child.receiveShadow = true
+            
+       
 
             child.geometry.computeBoundingBox();
             child.geometry.boundingBox.expandByScalar(2);
+
         }
     })
 }
+
 
 
 
@@ -133,15 +135,18 @@ gltfLoader.load(
     '/models/dewModel.glb',
     (gltf) =>
     {
-         
+
         gltf.scene.rotation.min = (-Math.PI/2)
         gltf.scene.rotation.max = (Math.PI/2)
         gltf.scene.scale.set(0.35, 0.35, 0.35)
         gltf.scene.rotation.y = Math.PI*.5
-        // gltf.scene.scale.set(10, 10, 10)
         gltf.scene.position.set(-5, - 4, 0)
-        // gltf.scene.rotation.y = Math.PI 
+
         scene.add(gltf.scene)
+        let gltfModel = gltf.scene
+        gltfModel.traverse(function(obj) { obj.frustumCulled = false; });
+        // setModel(gltfModel)
+       
 
         updateAllMaterials()
     }
@@ -165,7 +170,7 @@ directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 5, 0)
 scene.add(directionalLight)
-// gui.add(directionalLight.position,'x').min(0).max(10).step(0.001).name('lightIntensity')
+
 
 
 
@@ -201,13 +206,13 @@ window.addEventListener('resize', () =>
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 
-camera.position.set(5, 4, 0)
+camera.position.set(5, 4, 5)
 scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.minAzimuthAngle =.5; 
-controls.maxAzimuthAngle = Math.PI; 
+controls.maxAzimuthAngle = Math.PI*5; 
 controls.target.set(0, 0, 0)
 controls.enableDamping = true 
 
@@ -253,10 +258,10 @@ const tick = () =>
     // Update controls
     controls.update()
 
-    // Render
+
     renderer.render(scene, camera)
 
-    // Call tick again on the next frame
+
     window.requestAnimationFrame(tick)
 }
 
