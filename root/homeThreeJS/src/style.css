@@ -4,11 +4,11 @@ body{
     padding: 0;
 }
 
-/* html,
+html,
 body
 {
     overflow: hidden;
-} */
+}
 
 /* load bar */
 .loading-bar

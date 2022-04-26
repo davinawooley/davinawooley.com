@@ -168,22 +168,20 @@ h2 {
 
 
 
+
     #footer {
+        padding-top: 50px;
+        bottom: 0;
+        width: 100%;
         font-family: jubilat-thin,serif;
         font-weight: 200;
         font-style: normal;
-        letter-spacing: 2px;
-
         display: table;
         text-align: center;
         margin-left: auto;
-        margin-right: auto;
-        padding-top: 8px;
         letter-spacing: 1px;
         color: rgb(74, 74, 74);
         font-size: 13px;
-        z-index: 20000;
-  
     }
 
 h6 {
@@ -245,6 +243,7 @@ a {
         text-align: center;
         text-align: center;
         font-size: 13px;
+        color: rgb(74, 74, 74);
     }
     #bottomLinks {
         word-spacing: 10px;
@@ -286,6 +285,7 @@ screen and( min-width: 500px) {
 
         bottom: 0;
         width: 100%
+        color: rgb(74, 74, 74);
     }
 }
 
