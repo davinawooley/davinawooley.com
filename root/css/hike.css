@@ -182,6 +182,7 @@ h2 {
         letter-spacing: 1px;
         color: rgb(74, 74, 74);
         font-size: 13px;
+        
     }
 
 h6 {
@@ -226,7 +227,6 @@ a {
         letter-spacing: 5px;
     }
     #divideLine {
-        /*     color: rgb(74, 74, 74);*/
         color: rgb(55, 55, 55);
     }
     #bottomLinks {
@@ -707,22 +707,18 @@ summary::-webkit-details-marker {
 
 th,
     td {
-        padding-right: 20px;
+        /* padding-right: 20px;
         padding-bottom: 20px;
-        /* padding-top: 15px; */
-      
-        text-align: left;
+        text-align: left; */
         border: 0;
-        /* border-style: solid;
-        border-bottom: 1px solid rgb(58, 58, 58); */
         border-left: none;
         border-collapse: collapse;
         font-family: rubik, sans-serif;
         font-size: 15px;
     }
     #generalTable{
-            padding-right: 20px;
-            /* padding-bottom: 20px; */
+            padding-right: 200px;
+
             
             vertical-align: center;
             text-align: left;
@@ -740,9 +736,10 @@ th,
         border-collapse: collapse;
         /* color: white; */
         color: rgba(104, 115, 119, 10);
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 1px;
-
+text-align: center;
+vertical-align: middle;
         /* margin: 3%; */
     }
     
@@ -755,7 +752,7 @@ th,
     }
     
     td {
-        font-size: 15px;
+        /* font-size: 15px; */
         vertical-align: top;
     }
     #makeInline{
@@ -1098,16 +1095,11 @@ th,
     th,
     td {
         padding-right: 20px;
-        padding-bottom: 20px;
-        /* padding-top: 15px; */
-      
         text-align: left;
+        vertical-align: middle;
         border: 0;
         border-style: solid;
         border-bottom: 1px solid rgb(58, 58, 58);
-        border-left: none;
-        border-collapse: collapse;
-        font-family: rubik, sans-serif;
-        font-size: 15px;
+        font-size: 14px;
     }
     
