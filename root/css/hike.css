@@ -32,8 +32,9 @@ img {
 #homeIcon {
     padding-bottom: 5px;
     margin-top: 20px;
-    margin-left: 2%;
+    margin-left: 3%;
     position:fixed;
+    width:50px;
 }
 
 #homeLink {
@@ -1404,8 +1405,6 @@ a.bottom:hover:before {
 .btn:hover {
     opacity: 0.7;
 }
-
-
 
 
 #myPic {
