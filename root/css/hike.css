@@ -218,7 +218,6 @@ a {
     }
 
     #underName {
-    letter-spacing: 3px;
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -1420,23 +1419,18 @@ a.bottom:hover:before {
 
 #underName {
     padding-top: 10%;
-    letter-spacing: 3px;
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
     position: relative;
     font-size: 13px;
-}
-#underName {
     letter-spacing: 10px;
-}
-#underName {
     font-size: 80px;
-    padding-top: 23%;
+    padding-top: 350px;
     color:#747474;
-
-
 }
+
+
 
 
 #topRow{
