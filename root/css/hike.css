@@ -1479,7 +1479,7 @@ th,
     
     tr {
         padding: 15px;
-        line-height: 30px;
+        /* line-height: 30px; */
     }
     
     td {
@@ -1616,9 +1616,10 @@ th,
         border: 0;
         font-family: roboto-slab, serif;
         font-weight: 300;
-        /* border-style: solid;
-        border-bottom: 1px solid rgb(58, 58, 58); */
         font-size: 12px;
+    }
+    #tableHeaderLine{
+        border-bottom: 1px solid rgb(58, 58, 58);
     }
     
 @media (max-width: 500px){
