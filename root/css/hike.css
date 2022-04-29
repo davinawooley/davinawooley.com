@@ -8,6 +8,11 @@ body {
 #toLeft{
     font-size: 13px;
 }
+hr{
+    width: 70%;
+    text-align: left;
+    margin-left:0px;
+}
 
 .my-element {
     display: inline-block;
@@ -129,10 +134,13 @@ h2 {
 
 #underNameSub {
     line-height: 1px;
-    position: relative;
-    font-family: roboto-slab, serif;
-    font-weight: 300;
-    font-style: normal
+    font-family: rubik, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#747474;
+
+    
+    font-size: 25px;
 }
 
 
@@ -263,6 +271,8 @@ a {
     p {
         color: rgb(179, 179, 179);
     }
+
+
 }
 
 @media (min-width: 500px),
@@ -270,8 +280,6 @@ screen and( min-width: 500px) {
     h1 {
         white-space: nowrap;
     }
-
- 
 
     .menu-wrap .menu {
         position: fixed;
@@ -303,6 +311,7 @@ screen and( min-width: 500px) {
         line-height: 3vw;
         font-size: 1vw;
     }
+
 }
 
 a.bottom {
@@ -557,6 +566,7 @@ a.bottom:hover:before {
     color: rgb(97, 95, 95);
     letter-spacing: 2px;
     z-index: 20;
+ 
 }
 
 #bioBody {
@@ -567,7 +577,8 @@ letter-spacing: 2px;
     font-size: 12px;
     line-height: 24px;
     text-align: left;
-    width: 875px;
+    width: 70%;
+    /* width: 875px; */
     /* color: rgb(28, 28, 28); */
     color:#747474;
 }
@@ -701,10 +712,6 @@ th,
     }
 
 
-    #ctt {
-        margin-left: 10%;
-    }
-    
     #sectionHead {
         text-align: left;
     }
@@ -722,8 +729,6 @@ th,
         font-weight: 400;
     }
     
-    
-
     a.bottom:before {
         content: "";
         position: absolute;
@@ -766,7 +771,7 @@ th,
         letter-spacing: 2px;
     }
 
-    item {
+    .item {
         display: inline;
     }
     
@@ -795,7 +800,7 @@ th,
         
         #bioBody{
             font-size: 12px;
-            width: 95%;
+            width: 80%;
         }
 
         #titleWork{
@@ -961,6 +966,7 @@ a {
     }
     ul{
         margin-right: 2rem;
+
     }
 }
 
@@ -1317,7 +1323,7 @@ body {
         font-size: 13px;
         line-height: 24px;
         text-align: left;
-        width: 100vw;
+        width: 70vw;
         color:#747474;
     }
 }
@@ -1451,8 +1457,9 @@ th,
             vertical-align: center;
             text-align: left;
             border: 0;
-            border-style: solid;
-            border-bottom: 1px solid rgb(58, 58, 58);
+            border-style: none;
+            /* border-style: solid; */
+            /* border-bottom: 1px solid rgb(58, 58, 58); */
             border-left: none;
             border-collapse: collapse;
             font-family: rubik, sans-serif;
@@ -1607,9 +1614,11 @@ th,
         text-align: left;
         vertical-align: middle;
         border: 0;
-        border-style: solid;
-        border-bottom: 1px solid rgb(58, 58, 58);
-        font-size: 14px;
+        font-family: roboto-slab, serif;
+        font-weight: 300;
+        /* border-style: solid;
+        border-bottom: 1px solid rgb(58, 58, 58); */
+        font-size: 12px;
     }
     
 @media (max-width: 500px){
