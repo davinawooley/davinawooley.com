@@ -4,23 +4,19 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
 
-/**
- * Loaders
- */
+// Loaders
 const loadingBarElement = document.querySelector('.loading-bar')
 
 let sceneReady = false
 const loadingManager = new THREE.LoadingManager(
-    // Loaded
     () =>
     {
-        // Wait a little
         window.setTimeout(() =>
         {
-            // Animate overlay
+            // Overlay
             gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
 
-            // Update loadingBarElement
+            // Update load
             loadingBarElement.classList.add('ended')
             loadingBarElement.style.transform = ''
         }, 500)
@@ -34,7 +30,7 @@ const loadingManager = new THREE.LoadingManager(
     // Progress
     (itemUrl, itemsLoaded, itemsTotal) =>
     {
-        // Calculate the progress and update the loadingBarElement
+        // Calculate progress and update bar
         const progressRatio = itemsLoaded / itemsTotal
         loadingBarElement.style.transform = `scaleX(${progressRatio})`
     }
@@ -42,9 +38,7 @@ const loadingManager = new THREE.LoadingManager(
 const gltfLoader = new GLTFLoader(loadingManager)
 const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
 
-/**
- * Base
- */
+// Base
 // Debug
 const debugObject = {}
 
@@ -72,9 +66,7 @@ const overlayMaterial = new THREE.ShaderMaterial({
         uniform float uAlpha;
         void main()
         {
-            gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);
-
-            
+            gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);            
         }
     `
 })
@@ -82,7 +74,7 @@ const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
 scene.add(overlay)
 
 
-// update all materials
+// materials
 
 const updateAllMaterials = () =>
 {
@@ -95,10 +87,8 @@ const updateAllMaterials = () =>
             child.material.needsUpdate = true
             child.castShadow = true
             child.receiveShadow = true
-    
             child.geometry.computeBoundingBox()
             child.geometry.boundingBox.expandByScalar(0)
-            // child.frustumCulled = false;
 
         }
     })
@@ -111,12 +101,12 @@ const updateAllMaterials = () =>
  * Environment map
  */
 const environmentMap = cubeTextureLoader.load([
-    '/textures/environmentMap/0/px.jpg',
-    '/textures/environmentMap/0/nx.jpg',
-    '/textures/environmentMap/0/py.jpg',
-    '/textures/environmentMap/0/ny.jpg',
-    '/textures/environmentMap/0/pz.jpg',
-    '/textures/environmentMap/0/nz.jpg'
+    '/textures/update/0/px.jpg',
+    '/textures/update/0/nx.jpg',
+    '/textures/update/0/py.jpg',
+    '/textures/update/0/ny.jpg',
+    '/textures/update/0/pz.jpg',
+    '/textures/update/0/nz.jpg'
 ])
 
 environmentMap.encoding = THREE.sRGBEncoding
@@ -126,9 +116,7 @@ scene.environment = environmentMap
 
 debugObject.envMapIntensity = 2.5
 
-/**
- * Models
- */
+// 3D Model
 gltfLoader.load(
     '/models/DamagedHelmet/glTF/dee.gltf',
     (gltf) =>
@@ -141,9 +129,7 @@ gltfLoader.load(
     }
 )
 
-/**
- * Points of interest
- */
+// Raycaster
 const raycaster = new THREE.Raycaster()
 const points = [
     {
@@ -160,9 +146,7 @@ const points = [
     }
 ]
 
-/**
- * Lights
- */
+// Lights
 
 const ambientLight = new THREE.AmbientLight('0x3A3B3C', 1)
 scene.add(ambientLight)
@@ -181,9 +165,6 @@ directionalLight.position.set(- 5, 5, 0)
 // scene.add(directionalLight)
 scene.add(directionalLight)
 
-
-
-
 // second light
 
 const directionalLight2 = new THREE.DirectionalLight(0xf4f4f4, 3)
@@ -196,7 +177,6 @@ directionalLight.shadow.camera.top = -7
 directionalLight.shadow.camera.right = -7
 directionalLight.shadow.camera.bottom = - -7
 directionalLight.position.set(5, -5, 0)
-
 scene.add(directionalLight2)
 
 /**
@@ -230,9 +210,6 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 
 camera.position.set(25, 21,  20)
 scene.add(camera)
 
-
-
-
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.minAzimuthAngle =-Math.PI*5; 
@@ -244,9 +221,21 @@ controls.minPolarAngle=0;
 controls.target.set(10, 9, 10)
 controls.enableDamping = true 
 
-/**
- * Renderer
- */
+
+const cursor = {
+    x: 0,
+    y: 0
+}
+
+window.addEventListener('mousemove', (event) =>
+{
+    cursor.x = event.clientX / sizes.width - 0.5
+    cursor.y = event.clientY / sizes.height - 0.5
+
+    console.log(cursor.x, cursor.y)
+})
+
+// Renderer
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas, 
     antialias: true
@@ -261,13 +250,13 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 renderer.toneMappingExposure = 3
-/**
- * Animate
- */
+
+// ticker
 const tick = () =>
 {
     // Update controls
     controls.update()
+    
 
     // Update points only when the scene is ready
     if(sceneReady)
@@ -311,16 +300,17 @@ const tick = () =>
                 }
             }
     
-            const translateX = screenPosition.x * sizes.width * 0.5
-            const translateY = - screenPosition.y * sizes.height * 0.5
+            const translateX = Math.sin(cursor.x * Math.PI * 2) * 2
+            const translateY = - cursor.y * 3
             point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+            camera.lookAt(point.position)
         }
     }
 
     // Render
     renderer.render(scene, camera)
 
-    // Call tick again on the next frame
+    // ticker for each frame
     window.requestAnimationFrame(tick)
 }
 
