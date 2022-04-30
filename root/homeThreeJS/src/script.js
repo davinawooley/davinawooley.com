@@ -1,53 +1,52 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import { gsap } from 'gsap'
 
-
-
-// Loaders
+/**
+ * Loaders
+ */
 const loadingBarElement = document.querySelector('.loading-bar')
+
+let sceneReady = false
 const loadingManager = new THREE.LoadingManager(
+    // Loaded
     () =>
     {
+        // Wait a little
+        window.setTimeout(() =>
+        {
+            // Animate overlay
+            gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
+
+            // Update loadingBarElement
+            loadingBarElement.classList.add('ended')
+            loadingBarElement.style.transform = ''
+        }, 500)
 
         window.setTimeout(() =>
         {
-
-            gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 , delay: 1})
-            loadingBarElement.classList.add('ended')
-            loadingBarElement.style.transform = ''
-
-        }, 500)
+            sceneReady = true
+        }, 2000)
     },
 
     // Progress
     (itemUrl, itemsLoaded, itemsTotal) =>
     {
-        // console.log(itemUrl, itemsLoaded, itemsTotal)
+        // Calculate the progress and update the loadingBarElement
         const progressRatio = itemsLoaded / itemsTotal
         loadingBarElement.style.transform = `scaleX(${progressRatio})`
     }
-
 )
-const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('/draco/')
-
 const gltfLoader = new GLTFLoader(loadingManager)
-gltfLoader.setDRACOLoader(dracoLoader)
-
 const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
-
 
 /**
  * Base
  */
 // Debug
 const debugObject = {}
-// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -59,6 +58,7 @@ const scene = new THREE.Scene()
 const overlayGeomeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
 const overlayMaterial = new THREE.ShaderMaterial({
     transparent : true,
+    side: THREE.DoubleSide,
     uniforms: {
         uAlpha:{value:1}
     },
@@ -81,6 +81,7 @@ const overlayMaterial = new THREE.ShaderMaterial({
 const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
 scene.add(overlay)
 
+
 // update all materials
 
 const updateAllMaterials = () =>
@@ -94,11 +95,10 @@ const updateAllMaterials = () =>
             child.material.needsUpdate = true
             child.castShadow = true
             child.receiveShadow = true
-            
-       
-
-            child.geometry.computeBoundingBox();
-            child.geometry.boundingBox.expandByScalar(2);
+    
+            child.geometry.computeBoundingBox()
+            child.geometry.boundingBox.expandByScalar(0)
+            // child.frustumCulled = false;
 
         }
     })
@@ -107,13 +107,16 @@ const updateAllMaterials = () =>
 
 
 
-// environment map
-const environmentMap = cubeTextureLoader.load(['../ ../images/dew.jpg',
-'/textures/environmentMaps/0/nx.jpg',
-'/textures/environmentMaps/0/py.jpg',
-'/textures/environmentMaps/0/ny.jpg',
-'/textures/environmentMaps/0/pz.jpg',
-'/textures/environmentMaps/0/nz.jpg'
+/**
+ * Environment map
+ */
+const environmentMap = cubeTextureLoader.load([
+    '/textures/environmentMap/0/px.jpg',
+    '/textures/environmentMap/0/nx.jpg',
+    '/textures/environmentMap/0/py.jpg',
+    '/textures/environmentMap/0/ny.jpg',
+    '/textures/environmentMap/0/pz.jpg',
+    '/textures/environmentMap/0/nz.jpg'
 ])
 
 environmentMap.encoding = THREE.sRGBEncoding
@@ -126,37 +129,42 @@ debugObject.envMapIntensity = 2.5
 /**
  * Models
  */
-
-
-let mixer = null
-
-
 gltfLoader.load(
-    '/models/dewModel.glb',
+    '/models/DamagedHelmet/glTF/dee.gltf',
     (gltf) =>
     {
-
-        gltf.scene.rotation.min = (-Math.PI/2)
-        gltf.scene.rotation.max = (Math.PI/2)
-        gltf.scene.scale.set(0.35, 0.35, 0.35)
-        gltf.scene.rotation.y = Math.PI*.5
-        gltf.scene.position.set(-5, - 4, 0)
-
+        gltf.scene.scale.set(1.25, 1.25, 1.25)
+        gltf.scene.rotation.y = Math.PI * 0.45
         scene.add(gltf.scene)
-        let gltfModel = gltf.scene
-        gltfModel.traverse(function(obj) { obj.frustumCulled = false; });
-        // setModel(gltfModel)
-       
 
         updateAllMaterials()
     }
 )
 
+/**
+ * Points of interest
+ */
+const raycaster = new THREE.Raycaster()
+const points = [
+    {
+        position: new THREE.Vector3(1.55, 0.3, - 0.6),
+        element: document.querySelector('.point-0')
+    },
+    {
+        position: new THREE.Vector3(0.5, 0.8, - 1.6),
+        element: document.querySelector('.point-1')
+    },
+    {
+        position: new THREE.Vector3(1.6, - 1.3, - 0.7),
+        element: document.querySelector('.point-2')
+    }
+]
 
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0xf4f4f4, 2)
+
+const ambientLight = new THREE.AmbientLight('0x3A3B3C', 1)
 scene.add(ambientLight)
 
 const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 3)
@@ -169,12 +177,27 @@ directionalLight.shadow.camera.top = 7
 directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 5, 0)
+
+// scene.add(directionalLight)
 scene.add(directionalLight)
 
 
 
 
+// second light
 
+const directionalLight2 = new THREE.DirectionalLight(0xf4f4f4, 3)
+
+directionalLight.castShadow = true
+directionalLight.shadow.mapSize.set(1024, 1024)
+directionalLight.shadow.camera.far = -5
+directionalLight.shadow.camera.left =  7
+directionalLight.shadow.camera.top = -7
+directionalLight.shadow.camera.right = -7
+directionalLight.shadow.camera.bottom = - -7
+directionalLight.position.set(5, -5, 0)
+
+scene.add(directionalLight2)
 
 /**
  * Sizes
@@ -193,11 +216,10 @@ window.addEventListener('resize', () =>
     // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
-   
+
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    
 })
 
 /**
@@ -205,15 +227,21 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-
-camera.position.set(5, 4, 5)
+camera.position.set(25, 21,  20)
 scene.add(camera)
+
+
+
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
-controls.minAzimuthAngle =.5; 
-controls.maxAzimuthAngle = Math.PI*5; 
-controls.target.set(0, 0, 0)
+controls.minAzimuthAngle =-Math.PI*5; 
+// controls.maxAzimuthAngle = Math.PI*.05; 
+controls.minDistance = 20.0; 
+controls.maxDistance = 50.0;
+controls.maxPolarAngle = 10;
+controls.minPolarAngle=0;
+controls.target.set(10, 9, 10)
 controls.enableDamping = true 
 
 /**
@@ -232,36 +260,67 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
-renderer.toneMappingExposure = 2
-
-
-
-
+renderer.toneMappingExposure = 3
 /**
  * Animate
  */
-const clock = new THREE.Clock()
-let previousTime = 0
-
 const tick = () =>
 {
-    const elapsedTime = clock.getElapsedTime()
-    const deltaTime = elapsedTime - previousTime
-    previousTime = elapsedTime
-
-    // Model animation
-    if(mixer)
-    {
-        mixer.update(deltaTime)
-    }
-
     // Update controls
     controls.update()
 
+    // Update points only when the scene is ready
+    if(sceneReady)
+    {
+        // Go through each point
+        for(const point of points)
+        {
+            // Get 2D screen position
+            const screenPosition = point.position.clone()
+            screenPosition.project(camera)
+    
+            // Set the raycaster
+            raycaster.setFromCamera(screenPosition, camera)
+            const intersects = raycaster.intersectObjects(scene.children, true)
+    
+            // No intersect found
+            if(intersects.length === 0)
+            {
+                // Show
+                point.element.classList.add('visible')
+            }
 
+            // Intersect found
+            else
+            {
+                // Get the distance of the intersection and the distance of the point
+                const intersectionDistance = intersects[0].distance
+                const pointDistance = point.position.distanceTo(camera.position)
+    
+                // Intersection is close than the point
+                if(intersectionDistance < pointDistance)
+                {
+                    // Hide
+                    point.element.classList.remove('visible')
+                }
+                // Intersection is further than the point
+                else
+                {
+                    // Show
+                    point.element.classList.add('visible')
+                }
+            }
+    
+            const translateX = screenPosition.x * sizes.width * 0.5
+            const translateY = - screenPosition.y * sizes.height * 0.5
+            point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+        }
+    }
+
+    // Render
     renderer.render(scene, camera)
 
-
+    // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 }
 
