@@ -126,7 +126,7 @@ h2 {
 }
 
 #underName {
-    line-height: 1px;
+    line-height: 50px;
     position: relative;
     font-family: roboto-slab, serif;
     font-weight: 300;
@@ -134,7 +134,7 @@ h2 {
 }
 
 #underNameSub {
-    line-height: 1px;
+    line-height: 30px;
     font-family: rubik, sans-serif;
     font-weight: 400;
     font-style: normal;
