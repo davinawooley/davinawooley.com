@@ -226,7 +226,7 @@ a {
     position: relative;
     letter-spacing: 10px;
     font-size: 80px;
-    padding-top: 100px;
+    padding-top: 50px;
     color:#747474;
 }
 }
@@ -1426,7 +1426,7 @@ a.bottom:hover:before {
     font-size: 13px;
     letter-spacing: 10px;
     font-size: 80px;
-    padding-top: 350px;
+    padding-top: 320px;
     color:#747474;
 }
 
