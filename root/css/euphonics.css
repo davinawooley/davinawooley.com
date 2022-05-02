@@ -1,0 +1,143 @@
+body {
+    background-color:rgb(34, 34, 34);
+    margin-top: 2%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: auto;
+}
+
+#nameTitle {
+    white-space: nowrap;
+    margin-top: auto;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-90%);
+    transform: translateX(-50%);
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 19px;
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+    letter-spacing: 10px;
+    font-family: rubik, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(107, 211, 249);
+}
+
+#nameTitle {
+    margin-top: auto;
+    text-align: center;
+    position: fixed;
+    left: 49%;
+    top: 53%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h2 {
+    color: rgb(74, 74, 74);
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    text-shadow: 0px 0px 2px #e6e6e6;
+}
+
+#underName {
+ text-align: center;
+ line-height: 1px;
+ position: relative;
+ font-family: jubilat-thin,serif;
+font-weight: 200;
+font-style: normal;
+ color: rgb(107, 211, 249);
+}
+
+@media(max-width:1000px),
+
+(max-height:500px) {
+    #nameTitle {
+        top: 50%;
+        height: .2vh;
+        font-size: .4vw;
+    }
+.text{
+    margin-bottom: .8vh;
+}
+
+    h2 {
+        white-space: nowrap;
+        font-size: 12px;
+        display: inline;
+        letter-spacing: 5px;
+    }
+    #divideLine {
+        color:#747474;
+        font-family: jubilat-thin,serif;
+        font-weight: 200;
+        font-style: normal;
+    }
+   
+    body {
+        margin-left: 10px;
+        margin-bottom: 2px;
+    }
+    #footer {
+        bottom: 0px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 500px)
+{
+    h1 {
+        white-space: nowrap;
+    }
+
+    body{  overflow-x: scroll;}
+  
+    #footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        white-space: nowrap;
+        letter-spacing: 0.25em;
+        font-size: 4.0vw;  
+    }
+
+    body{  overflow-x: scroll;}
+
+    #nameTitle {
+    left: 50%;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-90%);
+    transform: translateX(-50%);
+    }
+}
+
+body{
+    overflow: hidden;
+}
