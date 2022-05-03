@@ -1459,6 +1459,7 @@ th,
             font-family: rubik, sans-serif;
             font-size: 15px;
         }
+
     
     
     table {
@@ -1653,3 +1654,23 @@ th,
     }
     #contentImage{  width: 80vw;}
 }
+
+
+
+#outlineTable  td, th,tr  {
+    padding: 20px;
+    vertical-align: center;
+    text-align: left;
+    border-style: solid;
+    border-bottom: 1px solid rgb(58, 58, 58);
+    border-right: 1px solid rgb(58, 58, 58);
+
+
+}
+#topRow2,td{
+
+ border-style: hidden;
+
+}
+
+
