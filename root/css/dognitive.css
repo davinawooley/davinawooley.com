@@ -620,6 +620,7 @@ th,
         border-collapse: collapse;
         color: white;
         font-size: 13px;
+        width: 60%;
     }
     
     tr {
@@ -1664,6 +1665,7 @@ th,
     border-style: solid;
     border-bottom: 1px solid rgb(58, 58, 58);
     border-right: 1px solid rgb(58, 58, 58);
+
 
 
 }
