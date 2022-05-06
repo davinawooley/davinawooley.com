@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
+import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
 
 // Loaders
 const loadingBarElement = document.querySelector('.loading-bar')
@@ -48,7 +49,46 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
+// Textures
+const CubeTextureLoader = new THREE.TextureLoader()
+
+
+
+// var points2 = [
+//     new THREE.Vector3( 1, 0, 0 ),
+//     new THREE.Vector3( 0, 1, 0 ),
+//     new THREE.Vector3( 0, 0, 1 )
+// ];
+
+// const convGeometry = new ConvexGeometry(points2)
+
+
+// const material2 = new THREE.MeshBasicMaterial( {
+//     color: 'purple', wireframe: true,
+// } );
+
+// const mesh2 = new THREE.Mesh( convGeometry, material2 );
+// scene.add(mesh2);
+
+// particles
+
+// geom
+// const particlesGeometry = new THREE.SphereGeometry(1, 32, 32)
+
+
+const particlesGeometry = new THREE.BufferGeometry()
+const count = 5000
+
+const positions = new Float32Array(count * 30) 
+for(let i = 0; i < count * 3; i++) 
+{
+    positions[i] = (Math.random() - 0.5) * 60
+}
+
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3)) 
 // overlay
+
+
 const overlayGeomeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
 const overlayMaterial = new THREE.ShaderMaterial({
     transparent : true,
@@ -74,7 +114,12 @@ const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
 scene.add(overlay)
 
 
+
 // materials
+const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.1,
+    sizeAttenuation: true
+})
 
 const updateAllMaterials = () =>
 {
@@ -94,7 +139,9 @@ const updateAllMaterials = () =>
     })
 }
 
-
+// points
+const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+scene.add(particles)
 
 
 /**
@@ -213,7 +260,6 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.minAzimuthAngle =-Math.PI*5; 
-// controls.maxAzimuthAngle = Math.PI*.05; 
 controls.minDistance = 20.0; 
 controls.maxDistance = 50.0;
 controls.maxPolarAngle = 10;
@@ -242,14 +288,14 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 renderer.shadowMap.enabled = true
-renderer.physicallyCorrectLights = true
 renderer.shadowMap.type = THREE .PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
-renderer.toneMappingExposure = 3
+// turn this back on
+renderer.toneMappingExposure = 1.5
 
 // ticker
 const tick = () =>
