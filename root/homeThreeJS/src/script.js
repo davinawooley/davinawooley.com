@@ -54,6 +54,9 @@ const scene = new THREE.Scene()
 const CubeTextureLoader = new THREE.TextureLoader()
 
 
+const textureLoader = new THREE.TextureLoader()
+const particleTexture = textureLoader.load('/textures/particles/6.png')
+
 
 // var points2 = [
 //     new THREE.Vector3( 1, 0, 0 ),
@@ -79,9 +82,19 @@ const CubeTextureLoader = new THREE.TextureLoader()
 
 const particlesGeometry = new THREE.BufferGeometry()
 const count = 5000
+const count2 = 50000
 
 const positions = new Float32Array(count * 30) 
 const colors = new Float32Array(count * 30)
+
+const positions2 = new Float32Array(count * 3)
+const colors2 = new Float32Array(count * 3)
+for(let i = 0; i < count2 * 3; i++)
+{
+    positions2[i] = (Math.random() - 0.5) * 100
+    colors2[i] = Math.random()
+}
+
 
 for(let i = 0; i < count * 3; i++) 
 {
@@ -144,9 +157,27 @@ const updateAllMaterials = () =>
         }
     })
 }
+
+// mignt not need p2
+const particlesMaterial2 = new THREE.PointsMaterial()
+
+particlesMaterial2.size = 0.2
+particlesMaterial2.sizeAttenuation = true
+
+particlesMaterial2.color = new THREE.Color('grey')
+
+particlesMaterial2.transparent = true
+particlesMaterial2.alphaMap = particleTexture
+
+particlesMaterial2.depthWrite = false
+particlesMaterial2.blending = THREE.AdditiveBlending
+
+
 particlesMaterial.vertexColors = true
 // points
 const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+scene.add(particles)
+const particles2 = new THREE.Points(particlesGeometry, particlesMaterial2)
 scene.add(particles)
 
 
@@ -304,7 +335,7 @@ renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 // turn this back on
 renderer.toneMappingExposure = 2
-
+const clock = new THREE.Clock()
 // ticker
 const tick = () =>
 {
@@ -354,6 +385,31 @@ const tick = () =>
                 }
             }
     
+
+
+
+
+            const elapsedTime = clock.getElapsedTime()
+
+            // Update particles
+            for(let i = 0; i < count; i++)
+            {
+                let i3 = i * 3
+        
+                const x = particlesGeometry.attributes.position.array[i3]
+   
+                particlesGeometry.attributes.position.array[i3 + 10] = Math.cos(elapsedTime + x)
+                 }
+            particlesGeometry.attributes.position.needsUpdate = true
+        
+            // renderer.render(scene, camera)
+        
+            // window.requestAnimationFrame(tick)
+
+
+
+
+
             const translateX = Math.sin(cursor.x * Math.PI * 2) * 2
             const translateY = - cursor.y * 3
             point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
