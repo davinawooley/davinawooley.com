@@ -5,6 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
 import CANNON from 'cannon' 
 import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
+import { ceilPowerOfTwo } from 'three/src/math/MathUtils'
 
 // Loaders
 const loadingBarElement = document.querySelector('.loading-bar')
@@ -79,32 +80,42 @@ const particleTexture = textureLoader.load('/textures/particles/6.png')
 // geom
 // const particlesGeometry = new THREE.SphereGeometry(1, 32, 32)
 
-
+const particlesGeometry2 = new THREE.BufferGeometry()
 const particlesGeometry = new THREE.BufferGeometry()
 const count = 5000
 const count2 = 50000
 
-const positions = new Float32Array(count * 30) 
-const colors = new Float32Array(count * 30)
+const positions = new Float32Array(count * 33) 
+const colors = new Float32Array(count * 33)
 
 const positions2 = new Float32Array(count * 3)
 const colors2 = new Float32Array(count * 3)
 for(let i = 0; i < count2 * 3; i++)
 {
     positions2[i] = (Math.random() - 0.5) * 100
-    colors2[i] = Math.random()
+    // colors2[i] = Math.random()
 }
 
 
 for(let i = 0; i < count * 3; i++) 
 {
     positions[i] = (Math.random() - 0.5) * 60
+
+    // here
     colors[i] = Math.random()
+    // color = 'silver'
     
 }
 
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3)) 
+// particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
+// particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
 particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
+particlesGeometry.color = new THREE.Color('#ff88cc')
+
+
+particlesGeometry2.setAttribute('position', new THREE.BufferAttribute(positions, 3)) 
+// particlesGeometry2.setAttribute('color', new THREE.BufferAttribute(colors, 3))
 // overlay
 
 
@@ -416,6 +427,16 @@ const tick = () =>
 
             camera.lookAt(point.position)
         }
+
+
+
+
+
+
+
+
+
+        
     }
 
     // Render
