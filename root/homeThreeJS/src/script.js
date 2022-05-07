@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
 import CANNON from 'cannon' 
-import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
+// import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
 import { ceilPowerOfTwo } from 'three/src/math/MathUtils'
 
 // Loaders
