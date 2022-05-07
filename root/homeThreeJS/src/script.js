@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
+import CANNON from 'cannon' 
 import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
 
 // Loaders
@@ -167,7 +168,9 @@ scene.background = environmentMap
 scene.environment = environmentMap
 
 debugObject.envMapIntensity = 2.5
-
+// Physics
+// const world = new CANNON.World()
+// world.gravity(0, 0,0)
 // 3D Model
 gltfLoader.load(
     '/models/DamagedHelmet/glTF/dee.gltf',
@@ -300,7 +303,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 // turn this back on
-renderer.toneMappingExposure = 1.5
+renderer.toneMappingExposure = 2
 
 // ticker
 const tick = () =>
@@ -354,6 +357,7 @@ const tick = () =>
             const translateX = Math.sin(cursor.x * Math.PI * 2) * 2
             const translateY = - cursor.y * 3
             point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+
             camera.lookAt(point.position)
         }
     }
