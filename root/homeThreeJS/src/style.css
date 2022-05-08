@@ -18,7 +18,6 @@ body
     outline: none;
 }
 
-/* load bar */
 .loading-bar
 {
     position: absolute;
@@ -31,7 +30,6 @@ body
     transition: transform 0.5s;
     will-change: transform;
 }
-
 
 .loading-bar.ended{
 transform:scaleX(0);

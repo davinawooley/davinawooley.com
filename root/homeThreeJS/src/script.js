@@ -383,9 +383,6 @@ const tick = () =>
             }
     
 
-
-
-
             const elapsedTime = clock.getElapsedTime()
 
             // Update particles
