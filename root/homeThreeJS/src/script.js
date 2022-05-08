@@ -3,7 +3,6 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import CANNON from 'cannon' 
 // import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
 import { ceilPowerOfTwo } from 'three/src/math/MathUtils'
@@ -40,7 +39,7 @@ const loadingManager = new THREE.LoadingManager(
     }
 )
 const gltfLoader = new GLTFLoader(loadingManager)
-const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
+// const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
 
 // Base
 // Debug
@@ -51,37 +50,14 @@ const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-scene.add(new THREE.AxesHelper(5))
+// scene.add(new THREE.AxesHelper(0))
 
 
 // Textures
-const CubeTextureLoader = new THREE.TextureLoader()
-
-
+// const CubeTextureLoader = new THREE.TextureLoader()
 const textureLoader = new THREE.TextureLoader()
 const particleTexture = textureLoader.load('/textures/particles/6.png')
 
-
-// var points2 = [
-//     new THREE.Vector3( 1, 0, 0 ),
-//     new THREE.Vector3( 0, 1, 0 ),
-//     new THREE.Vector3( 0, 0, 1 )
-// ];
-
-// const convGeometry = new ConvexGeometry(points2)
-
-
-// const material2 = new THREE.MeshBasicMaterial( {
-//     color: 'purple', wireframe: true,
-// } );
-
-// const mesh2 = new THREE.Mesh( convGeometry, material2 );
-// scene.add(mesh2);
-
-// particles
-
-// geom
-// const particlesGeometry = new THREE.SphereGeometry(1, 32, 32)
 
 const particlesGeometry2 = new THREE.BufferGeometry()
 const particlesGeometry = new THREE.BufferGeometry()
@@ -122,7 +98,7 @@ particlesGeometry2.setAttribute('position', new THREE.BufferAttribute(positions,
 // overlay
 
 
-const overlayGeomeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
+// const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
 const overlayMaterial = new THREE.ShaderMaterial({
     transparent : true,
     side: THREE.DoubleSide,
@@ -144,8 +120,8 @@ const overlayMaterial = new THREE.ShaderMaterial({
     //     }
     // `
 })
-const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
-scene.add(overlay)
+// const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial)
+scene.add(overlayMaterial)
 
 
 
@@ -199,19 +175,19 @@ scene.add(particles)
 /**
  * Environment map
  */
-const environmentMap = cubeTextureLoader.load([
-    '/textures/update/0/px.jpg',
-    '/textures/update/0/nx.jpg',
-    '/textures/update/0/py.jpg',
-    '/textures/update/0/ny.jpg',
-    '/textures/update/0/pz.jpg',
-    '/textures/update/0/nz.jpg'
-])
+// const environmentMap = cubeTextureLoader.load([
+//     '/textures/update/0/px.jpg',
+//     '/textures/update/0/nx.jpg',
+//     '/textures/update/0/py.jpg',
+//     '/textures/update/0/ny.jpg',
+//     '/textures/update/0/pz.jpg',
+//     '/textures/update/0/nz.jpg'
+// ])
 
-environmentMap.encoding = THREE.sRGBEncoding
+// environmentMap.encoding = THREE.sRGBEncoding
 
-scene.background = environmentMap
-scene.environment = environmentMap
+// scene.background = environmentMap
+// scene.environment = environmentMap
 
 debugObject.envMapIntensity = 10
 // Physics
@@ -220,7 +196,7 @@ debugObject.envMapIntensity = 10
 // 3D Model
 gltfLoader.load(
 
-    '/models/DamagedHelmet/glTF/trying.gltf'
+    '/models/DamagedHelmet/glTF/mayeight2.gltf'
     ,
     (gltf) =>
     {
@@ -229,7 +205,7 @@ gltfLoader.load(
         scene.add(gltf.scene)
 
 
-        updateAllMaterials()
+        // updateAllMaterials()
     }
 )
 
@@ -269,7 +245,7 @@ directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 5, 0)
 
-scene.add(directionalLight)
+// scene.add(directionalLight)
 scene.add(directionalLight)
 
 // second light
@@ -355,7 +331,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 
-renderer.toneMappingExposure = 2
+renderer.toneMappingExposure = 10
 const clock = new THREE.Clock()
 // ticker
 const tick = () =>
@@ -428,9 +404,6 @@ const tick = () =>
             // window.requestAnimationFrame(tick)
 
 
-
-
-
             const translateX = Math.sin(cursor.x * Math.PI * 2) * 2
             const translateY = - cursor.y * 3
             point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
@@ -450,4 +423,4 @@ const tick = () =>
 
 tick()
 
-// scene.background = new THREE.Color( 'black' );
+scene.background = new THREE.Color( '#244244244' );
