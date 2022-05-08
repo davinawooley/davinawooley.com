@@ -1,0 +1,16 @@
+newmtl model314:anisotropic2SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.39 0.39 0.39
+Tf 0.06 0.00 0.13
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 0.06
+newmtl model314:pasted__anisotropic2SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.39 0.39 0.39
+Tf 0.06 0.00 0.13
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 0.06
