@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import CANNON from 'cannon' 
 // import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
 import { ceilPowerOfTwo } from 'three/src/math/MathUtils'
@@ -50,6 +51,8 @@ const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
+scene.add(new THREE.AxesHelper(5))
+
 
 // Textures
 const CubeTextureLoader = new THREE.TextureLoader()
@@ -125,20 +128,21 @@ const overlayMaterial = new THREE.ShaderMaterial({
     side: THREE.DoubleSide,
     uniforms: {
         uAlpha:{value:1}
-    },
-    vertexShader: `
-        void main()
-        {
-            gl_Position = vec4(position, 1.0);
-        }
-    `,
-    fragmentShader: `
-        uniform float uAlpha;
-        void main()
-        {
-            gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);            
-        }
-    `
+    }
+    // ,
+    // vertexShader: `
+    //     void main()
+    //     {
+    //         gl_Position = vec4(position, 1.0);
+    //     }
+    // `,
+    // fragmentShader: `
+    //     uniform float uAlpha;
+    //     void main()
+    //     {
+    //         gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);            
+    //     }
+    // `
 })
 const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
 scene.add(overlay)
@@ -209,22 +213,28 @@ environmentMap.encoding = THREE.sRGBEncoding
 scene.background = environmentMap
 scene.environment = environmentMap
 
-debugObject.envMapIntensity = 2.5
+debugObject.envMapIntensity = 10
 // Physics
 // const world = new CANNON.World()
 // world.gravity(0, 0,0)
 // 3D Model
 gltfLoader.load(
-    '/models/DamagedHelmet/glTF/dee.gltf',
+
+    '/models/DamagedHelmet/glTF/trying.gltf'
+    ,
     (gltf) =>
     {
-        gltf.scene.scale.set(1.25, 1.25, 1.25)
+        gltf.scene.scale.set(1.05, 1.05, 1.05)
         gltf.scene.rotation.y = Math.PI * 0.45
         scene.add(gltf.scene)
+
 
         updateAllMaterials()
     }
 )
+
+// obj
+
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
@@ -248,7 +258,7 @@ const points = [
 const ambientLight = new THREE.AmbientLight('0x3A3B3C', 1)
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 3)
+const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 1)
 
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
@@ -259,7 +269,7 @@ directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 5, 0)
 
-// scene.add(directionalLight)
+scene.add(directionalLight)
 scene.add(directionalLight)
 
 // second light
@@ -344,7 +354,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
-// turn this back on
+
 renderer.toneMappingExposure = 2
 const clock = new THREE.Clock()
 // ticker
@@ -428,14 +438,6 @@ const tick = () =>
             camera.lookAt(point.position)
         }
 
-
-
-
-
-
-
-
-
         
     }
 
@@ -447,3 +449,5 @@ const tick = () =>
 }
 
 tick()
+
+// scene.background = new THREE.Color( 'black' );
