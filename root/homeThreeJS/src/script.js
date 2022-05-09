@@ -196,7 +196,7 @@ debugObject.envMapIntensity = 10
 // 3D Model
 gltfLoader.load(
 
-    '/models/DamagedHelmet/glTF/mayeight2.gltf'
+    '/models/DamagedHelmet/glTF/quick2.gltf'
     ,
     (gltf) =>
     {
