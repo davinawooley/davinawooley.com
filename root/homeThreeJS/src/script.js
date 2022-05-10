@@ -189,14 +189,15 @@ scene.add(particles)
 // scene.background = environmentMap
 // scene.environment = environmentMap
 
-debugObject.envMapIntensity = 10
+debugObject.envMapIntensity = 5
 // Physics
 // const world = new CANNON.World()
 // world.gravity(0, 0,0)
 // 3D Model
 gltfLoader.load(
 
-    '/models/DamagedHelmet/glTF/quick2.gltf'
+    // '/models/DamagedHelmet/glTF/quick2.gltf'
+    '/models/DamagedHelmet/glTF/dewTest.gltf'
     ,
     (gltf) =>
     {
@@ -331,7 +332,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 
-renderer.toneMappingExposure = 10
+renderer.toneMappingExposure = 7
 const clock = new THREE.Clock()
 // ticker
 const tick = () =>
