@@ -232,10 +232,10 @@ const points = [
 
 // Lights
 
-const ambientLight = new THREE.AmbientLight('0x3A3B3C', 1)
+const ambientLight = new THREE.AmbientLight('0x3A3B3C', 2)
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 1)
+const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 2)
 
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
@@ -246,12 +246,11 @@ directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 5, 0)
 
-// scene.add(directionalLight)
 scene.add(directionalLight)
 
 // second light
 
-const directionalLight2 = new THREE.DirectionalLight(0xf4f4f4, 3)
+const directionalLight2 = new THREE.DirectionalLight(0xf4f4f4, 1)
 
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
@@ -332,7 +331,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
 renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 
-renderer.toneMappingExposure = 7
+renderer.toneMappingExposure = 3
 const clock = new THREE.Clock()
 // ticker
 const tick = () =>
