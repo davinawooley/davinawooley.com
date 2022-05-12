@@ -189,7 +189,7 @@ scene.add(particles)
 // scene.background = environmentMap
 // scene.environment = environmentMap
 
-debugObject.envMapIntensity = 5
+// debugObject.envMapIntensity = 5
 // Physics
 // const world = new CANNON.World()
 // world.gravity(0, 0,0)
