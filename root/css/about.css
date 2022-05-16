@@ -212,7 +212,7 @@ h1 {
     font-style: normal;
     position: relative;
     font-size: 80px;
-    padding-top: 300px;
+    padding-top: 100px;
     color:#747474;
 }
 
@@ -408,7 +408,7 @@ a {
         margin-top: 380px;
     }
     
-    b
+    
     #nameTitle {
         top: 50%;
     }
@@ -473,6 +473,30 @@ a {
         opacity: 85%;
         text-align: left;
         margin-top: 1%;  
+    }
+    
+    /* #underName {
+        letter-spacing: 3px;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        position: relative;
+        letter-spacing: 10px;
+        font-size: 80px;
+        padding-top: 100px;
+        color:#747474;
+    } */
+    #underName {
+
+        letter-spacing: 3px;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        position: relative;
+        letter-spacing: 10px;
+        font-size: 80px;
+        padding-top: 300px;
+        color:#747474;
     }
 }
 
@@ -921,6 +945,9 @@ footer{
 #imgRightLower{
     margin-top: 400px;
 }
+#nameTitle {
+    top: 50%;
+}
  }
 
 
@@ -1055,6 +1082,17 @@ a {
         margin-left: 7.5%;
         margin-right: 7.5%;  
     }
+    #underName {
+        letter-spacing: 3px;
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        position: relative;
+        /* letter-spacing: 10px;
+        font-size: 80px; */
+        padding-top: 100px;
+        color:#747474;
+    }
 }
 
 @media (min-width: 500px)
@@ -1102,12 +1140,7 @@ a {
     }
 
     
-    #underName {
-        font-style: normal;
-        position: relative;
-        padding-top: 100px;
-        color:#747474;
-    }
+  
     #footer{
         margin-bottom: 50px;
     }
