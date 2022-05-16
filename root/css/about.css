@@ -518,16 +518,7 @@ a {
         margin-left: 1%;
     }
 
-    #underName {
-        position: static;
-        /* font-family: rubik, sans-serif;
-        font-weight: 400; */
-        /* font-style: normal; */
-        letter-spacing: 1px;
-        font-size: 10vw;
-        padding-top:10%;
-        
-          }
+
     #shortBio{
         position: static;
     }
@@ -1068,8 +1059,8 @@ a {
         margin-right: 2rem;
     }
     #margined{
-        margin-left: 7.5%;
-        margin-right: 7.5%;  
+        margin-left: 15%;
+        margin-right: 15%;  
     }
     #underName {
         letter-spacing: 3px;
@@ -1128,6 +1119,10 @@ a {
         justify-content: center;
     }
 
+    #margined{
+        margin-left: 7.5%;
+        margin-right: 7.5%;  
+    }
     
   
     #footer{
