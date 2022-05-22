@@ -215,11 +215,11 @@ a {
         visibility: hidden;
     }
 
-    #titleWork{
+    .titleWork{
         white-space: nowrap;
     }
 
-    #descriptName{
+    .descriptName{
         white-space: nowrap;
     }
     #footer{
@@ -316,7 +316,7 @@ screen and( min-width: 500px) {
         bottom: 0;
         width: 100%
     }
-    #titleWork{
+    .titleWork{
         line-height: 3vw;
         font-size: 1vw;
     }
@@ -536,7 +536,7 @@ a.bottom:hover:before {
     transition: all 0.4s ease;
 }
 
-#menuLinks {
+.menuLinks {
     font-size: 20px;
     padding-bottom: 20px;
 }
@@ -570,7 +570,7 @@ a.bottom:hover:before {
     margin-right: 15%;
 }
 
-#shortBio {
+.shortBio {
     color: rgb(97, 95, 95);
     letter-spacing: 2px;
     z-index: 20;
@@ -757,7 +757,7 @@ th,
         width: 30px;
     }
 
-    #titleWork {
+    .titleWork {
         font-size: 17px;
         letter-spacing: 4px;
         font-family: rubik, sans-serif;
@@ -773,7 +773,7 @@ th,
         color: rgba(104, 115, 119, 255);
     }
 
-    #descriptName {
+    .descriptName {
         font-size: 12px;
         margin-left: 35px;
         color: rgb(28, 28, 28);
@@ -815,7 +815,7 @@ th,
             width: 95%;
         }
 
-        #titleWork{
+        .titleWork{
             font-size: 14px;
             letter-spacing: 3px;
             font-family: rubik, sans-serif;
@@ -830,7 +830,7 @@ th,
 
        
 
-        #descriptName{
+        .descriptName{
             font-size: 11.5px;
             color: rgb(28, 28, 28);
             font-family: jubilat-thin,serif;
@@ -945,14 +945,14 @@ a {
     margin: -7px;
 }
 
-#menuLinks {
+.menuLinks {
     font-size: 20px;
     padding-bottom: 20px;
     text-shadow: 0px 1px 2px rgb(237, 237, 237);
 }
 
 
-#projectName{
+.projectName{
     color:#626262;
 }
 
@@ -1031,7 +1031,7 @@ a {
       display: none;
     }
 
-    #menuLinks {
+    .menuLinks {
         font-size: 3.5vw;
         margin-right: 3vw;   
     }

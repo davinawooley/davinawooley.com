@@ -20,7 +20,7 @@ hr{
 #resume{
     font-size: 14px;
 }
-#bullet{
+.bullet{
     padding-right: 10px;
     vertical-align: middle;
     
@@ -31,7 +31,7 @@ hr{
 }
 #footer {
     padding-top: 50px;
-    bottom: 0;
+    bottom: 0; 
     width: 100%;
     font-family: jubilat-thin,serif;
     font-weight: 200;
@@ -122,12 +122,7 @@ img {
 }
 
 
-#hyphenOne {
-    color: rgb(47, 47, 47);
-    display: inline-block;
-}
-
-#hyphen {
+.hyphen {
     color: rgb(58, 58, 58);
     display: inline-block;
     padding: 7px;
@@ -519,7 +514,7 @@ a {
     }
 
 
-    #shortBio{
+    .shortBio{
         position: static;
     }
 
@@ -567,7 +562,7 @@ a {
         /* color: rgba(104, 115, 119, 10); */
         color:#747474;
     }
-    #shortBio{
+    .shortBio{
         margin-top: -30px;
     }
 
@@ -810,7 +805,7 @@ a.bottom:hover:before {
     transition: all 0.4s ease;
 }
 
-#menuLinks {
+.menuLinks {
     font-size: 20px;
     padding-bottom: 20px;
 }
@@ -857,7 +852,7 @@ a.bottom:hover:before {
     margin-right: 15%;
 }
 
-#shortBio {
+.shortBio {
     color: rgb(97, 95, 95);
     letter-spacing: 2px;
     z-index: 20;
@@ -1027,7 +1022,7 @@ a {
     margin: -7px;
 }
 
-#menuLinks {
+.menuLinks {
     font-size: 20px;
     padding-bottom: 20px;
     text-shadow: 0px 1px 2px rgb(237, 237, 237);
@@ -1138,7 +1133,7 @@ a {
       display: none;
     }
 
-    #menuLinks {
+    .menuLinks {
         font-size: 3.5vw;
         margin-right: 3vw; 
         /* white-space: nowrap;   */

@@ -187,29 +187,6 @@ h2 {
     text-shadow: 0px 0px 2px #e6e6e6;
 }
 
-#underName {
-    text-align: center;
-    line-height: 1px;
-    position: relative;
-    font-family: jubilat-thin,serif;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(28, 28, 28);
-}
-
-#footer {
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-top: auto;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    display: table-cell;
-    vertical-align: middle;
-}
 
 h6 {
     color: rgb(74, 74, 74);
@@ -236,7 +213,7 @@ a {
     margin: -7px;
 }
 
-#menuLinks {
+.menuLinks {
     font-size: 20px;
     padding-bottom: 20px;
     text-shadow: 0px 1px 2px rgb(237, 237, 237);
@@ -260,7 +237,7 @@ a {
         letter-spacing: 5px;
     }
 
-    #divideLine {
+    .divideLine {
         color:#747474;
         font-family: jubilat-thin,serif;
         font-weight: 200;
@@ -324,7 +301,7 @@ a {
         white-space: nowrap;
     }
 
-    #divideLine {
+    .divideLine {
         color:#747474;
         margin-right: .5%;
         margin-left: .5%;
@@ -381,13 +358,8 @@ a {
         cursor: default;
     }
 
-    #footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%
-    }
     
-    #menuLinks {
+    .menuLinks {
         font-size: 3.5vw;
         margin-right: 3vw;   
     }
@@ -629,4 +601,14 @@ a.bottom:hover:before {
 body{
     overflow: hidden;
     white-space: nowrap;
+}
+
+.underName {
+    text-align: center;
+    line-height: 1px;
+    position: relative;
+    font-family: jubilat-thin,serif;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(28, 28, 28);
 }
