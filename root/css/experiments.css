@@ -288,8 +288,6 @@ screen and( min-width: 500px) {
         white-space: nowrap;
     }
 
- 
-
     .menu-wrap .menu {
         position: fixed;
         top: -50%;
@@ -469,8 +467,6 @@ a.bottom:hover:before {
     height: 2px;
     background: inherit;
 }
-
-
 /* Moves Line Down */
 
 .menu-wrap .hamburger>div::after {
@@ -577,15 +573,14 @@ a.bottom:hover:before {
 }
 
 #bioBody {
-font-family: jubilat,serif;
-font-weight: 200;
-font-style: normal;
-letter-spacing: 2px;
+    font-family: jubilat,serif;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 2px;
     font-size: 12px;
     line-height: 24px;
     text-align: left;
     width: 875px;
-    /* color: rgb(28, 28, 28); */
     color:#747474;
 }
 
@@ -939,12 +934,6 @@ a {
     margin: -7px;
 }
 
-a {
-    display: inline;
-    padding: 7px;
-    margin: -7px;
-}
-
 .menuLinks {
     font-size: 20px;
     padding-bottom: 20px;
@@ -1012,9 +1001,7 @@ a {
 
 
     .menu-wrap .menu {
-        /*  */
         left: 30%;
-        /* width: 80%; */
         height: 14%;
         visibility: hidden;
         overflow: hidden;
@@ -1041,9 +1028,7 @@ a {
     }  
     body{
     overflow-x: hidden;
-    }
-
-    
+    }   
 }
 
 
