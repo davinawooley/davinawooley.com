@@ -3,9 +3,6 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
-import CANNON from 'cannon' 
-// import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry'
-import { ceilPowerOfTwo } from 'three/src/math/MathUtils'
 
 // Loaders
 const loadingBarElement = document.querySelector('.loading-bar')
@@ -39,7 +36,7 @@ const loadingManager = new THREE.LoadingManager(
     }
 )
 const gltfLoader = new GLTFLoader(loadingManager)
-// const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
+const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
 
 // Base
 // Debug
@@ -50,86 +47,34 @@ const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-// scene.add(new THREE.AxesHelper(0))
 
-
-// Textures
-// const CubeTextureLoader = new THREE.TextureLoader()
-const textureLoader = new THREE.TextureLoader()
-const particleTexture = textureLoader.load('/textures/particles/6.png')
-
-
-const particlesGeometry2 = new THREE.BufferGeometry()
-const particlesGeometry = new THREE.BufferGeometry()
-const count = 5000
-const count2 = 50000
-
-const positions = new Float32Array(count * 33) 
-const colors = new Float32Array(count * 33)
-
-const positions2 = new Float32Array(count * 3)
-const colors2 = new Float32Array(count * 3)
-for(let i = 0; i < count2 * 3; i++)
-{
-    positions2[i] = (Math.random() - 0.5) * 100
-    // colors2[i] = Math.random()
-}
-
-
-for(let i = 0; i < count * 3; i++) 
-{
-    positions[i] = (Math.random() - 0.5) * 60
-
-    // here
-    colors[i] = Math.random()
-    // color = 'silver'
-    
-}
-
-particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3)) 
-// particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
-// particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
-particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
-particlesGeometry.color = new THREE.Color('#ff88cc')
-
-
-particlesGeometry2.setAttribute('position', new THREE.BufferAttribute(positions, 3)) 
-// particlesGeometry2.setAttribute('color', new THREE.BufferAttribute(colors, 3))
 // overlay
-
-
-// const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
+const overlayGeomeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
 const overlayMaterial = new THREE.ShaderMaterial({
     transparent : true,
     side: THREE.DoubleSide,
     uniforms: {
         uAlpha:{value:1}
-    }
-    // ,
-    // vertexShader: `
-    //     void main()
-    //     {
-    //         gl_Position = vec4(position, 1.0);
-    //     }
-    // `,
-    // fragmentShader: `
-    //     uniform float uAlpha;
-    //     void main()
-    //     {
-    //         gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);            
-    //     }
-    // `
+    },
+    vertexShader: `
+        void main()
+        {
+            gl_Position = vec4(position, 1.0);
+        }
+    `,
+    fragmentShader: `
+        uniform float uAlpha;
+        void main()
+        {
+            gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);            
+        }
+    `
 })
-// const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial)
-scene.add(overlayMaterial)
-
+const overlay = new THREE.Mesh(overlayGeomeometry, overlayMaterial)
+scene.add(overlay)
 
 
 // materials
-const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.1,
-    sizeAttenuation: true
-})
 
 const updateAllMaterials = () =>
 {
@@ -149,69 +94,40 @@ const updateAllMaterials = () =>
     })
 }
 
-// mignt not need p2
-const particlesMaterial2 = new THREE.PointsMaterial()
 
-particlesMaterial2.size = 0.2
-particlesMaterial2.sizeAttenuation = true
-
-particlesMaterial2.color = new THREE.Color('grey')
-
-particlesMaterial2.transparent = true
-particlesMaterial2.alphaMap = particleTexture
-
-particlesMaterial2.depthWrite = false
-particlesMaterial2.blending = THREE.AdditiveBlending
-
-
-particlesMaterial.vertexColors = true
-// points
-const particles = new THREE.Points(particlesGeometry, particlesMaterial)
-scene.add(particles)
-const particles2 = new THREE.Points(particlesGeometry, particlesMaterial2)
-scene.add(particles)
 
 
 /**
  * Environment map
  */
-// const environmentMap = cubeTextureLoader.load([
-//     '/textures/update/0/px.jpg',
-//     '/textures/update/0/nx.jpg',
-//     '/textures/update/0/py.jpg',
-//     '/textures/update/0/ny.jpg',
-//     '/textures/update/0/pz.jpg',
-//     '/textures/update/0/nz.jpg'
-// ])
+const environmentMap = cubeTextureLoader.load([
+    '/textures/update/0/px.jpg',
+    '/textures/update/0/nx.jpg',
+    '/textures/update/0/py.jpg',
+    '/textures/update/0/ny.jpg',
+    '/textures/update/0/pz.jpg',
+    '/textures/update/0/nz.jpg'
+])
 
-// environmentMap.encoding = THREE.sRGBEncoding
+environmentMap.encoding = THREE.sRGBEncoding
 
-// scene.background = environmentMap
-// scene.environment = environmentMap
+scene.background = environmentMap
+scene.environment = environmentMap
 
-// debugObject.envMapIntensity = 5
-// Physics
-// const world = new CANNON.World()
-// world.gravity(0, 0,0)
+debugObject.envMapIntensity = 2.5
+
 // 3D Model
 gltfLoader.load(
-
-    // '/models/DamagedHelmet/glTF/quick2.gltf'
-    '/models/DamagedHelmet/glTF/dewTest.gltf'
-    ,
+    '/models/DamagedHelmet/glTF/dee.gltf',
     (gltf) =>
     {
-        gltf.scene.scale.set(1.05, 1.05, 1.05)
+        gltf.scene.scale.set(1.25, 1.25, 1.25)
         gltf.scene.rotation.y = Math.PI * 0.45
         scene.add(gltf.scene)
 
-
-        // updateAllMaterials()
+        updateAllMaterials()
     }
 )
-
-// obj
-
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
@@ -232,7 +148,7 @@ const points = [
 
 // Lights
 
-const ambientLight = new THREE.AmbientLight('0x3A3B3C', 2)
+const ambientLight = new THREE.AmbientLight('0x3A3B3C', 1)
 scene.add(ambientLight)
 
 const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 2)
@@ -290,12 +206,13 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(25, 21,  20)
+camera.position.set(35, 21,  20)
 scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.minAzimuthAngle =-Math.PI*5; 
+// controls.maxAzimuthAngle = Math.PI*.05; 
 controls.minDistance = 20.0; 
 controls.maxDistance = 50.0;
 controls.maxPolarAngle = 10;
@@ -324,15 +241,14 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 renderer.shadowMap.enabled = true
+renderer.physicallyCorrectLights = true
 renderer.shadowMap.type = THREE .PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
-renderer.physicallyCorrectLights = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 2.5
 
-renderer.toneMappingExposure = 3
-const clock = new THREE.Clock()
 // ticker
 const tick = () =>
 {
@@ -382,33 +298,11 @@ const tick = () =>
                 }
             }
     
-
-            const elapsedTime = clock.getElapsedTime()
-
-            // Update particles
-            for(let i = 0; i < count; i++)
-            {
-                let i3 = i * 3
-        
-                const x = particlesGeometry.attributes.position.array[i3]
-   
-                particlesGeometry.attributes.position.array[i3 + 10] = Math.cos(elapsedTime + x)
-                 }
-            particlesGeometry.attributes.position.needsUpdate = true
-        
-            // renderer.render(scene, camera)
-        
-            // window.requestAnimationFrame(tick)
-
-
             const translateX = Math.sin(cursor.x * Math.PI * 2) * 2
             const translateY = - cursor.y * 3
             point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
-
             camera.lookAt(point.position)
         }
-
-        
     }
 
     // Render
@@ -419,5 +313,3 @@ const tick = () =>
 }
 
 tick()
-
-scene.background = new THREE.Color( '#244244244' );
