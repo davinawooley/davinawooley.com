@@ -85,6 +85,10 @@ const updateAllMaterials = () =>
             child.material.envMap = environmentMap
             child.material.envMapIntensity = debugObject.envMapIntensity
             child.material.needsUpdate = true
+            child.material.metalness = 0.8
+            child.material.roughness = 0.2
+            child.material.opacity = 0.9
+            child.material.color.setHex( 0xADD8E6 );
             child.castShadow = true
             child.receiveShadow = true
             child.geometry.computeBoundingBox()
@@ -118,16 +122,21 @@ debugObject.envMapIntensity = 2.5
 
 // 3D Model
 gltfLoader.load(
-    '/models/DamagedHelmet/glTF/dee.gltf',
+    '/models/DamagedHelmet/glTF/mayeight2.gltf',
     (gltf) =>
     {
-        gltf.scene.scale.set(1.25, 1.25, 1.25)
+        gltf.scene.scale.set(1.33, 1.33, 1.33)
         gltf.scene.rotation.y = Math.PI * 0.45
+
+
+   
+        
         scene.add(gltf.scene)
 
         updateAllMaterials()
     }
 )
+
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
@@ -148,10 +157,10 @@ const points = [
 
 // Lights
 
-const ambientLight = new THREE.AmbientLight('0x3A3B3C', 1)
+const ambientLight = new THREE.AmbientLight('white', .75)
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0xf4f4f4, 2)
+const directionalLight = new THREE.DirectionalLight('white', 4)
 
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
@@ -166,7 +175,7 @@ scene.add(directionalLight)
 
 // second light
 
-const directionalLight2 = new THREE.DirectionalLight(0xf4f4f4, 1)
+const directionalLight2 = new THREE.DirectionalLight('white', 3)
 
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
@@ -206,7 +215,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(35, 21,  20)
+camera.position.set(39, 21,  20)
 scene.add(camera)
 
 // Controls
@@ -241,13 +250,13 @@ const renderer = new THREE.WebGLRenderer({
 })
 
 renderer.shadowMap.enabled = true
-renderer.physicallyCorrectLights = true
+// renderer.physicallyCorrectLights = true
 renderer.shadowMap.type = THREE .PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 renderer.toneMapping = THREE.ACESFilmicToneMapping
-renderer.toneMappingExposure = 2.5
+renderer.toneMappingExposure = 2.0
 
 // ticker
 const tick = () =>
