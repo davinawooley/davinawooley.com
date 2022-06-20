@@ -5,12 +5,11 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
 #toLeft{
     font-size: 13px;
 }
-/* #tabbed{
-    margin-left: 2em;
-} */
+
 hr{
     width: 70%;
     text-align: left;
@@ -119,9 +118,6 @@ h1 {
     font-style: normal;
 }
 
-
-/*End Name*/
-
 h2 {
     color: rgb(74, 74, 74);
     font-size: 12px;
@@ -129,12 +125,11 @@ h2 {
 }
 
 #underName {
-    line-height: 60px;
+    line-height: 85px;
     position: relative;
     font-family: roboto-slab, serif;
     font-weight: 300;
     font-style: normal
-
 }
 
 #underNameSub {
@@ -143,13 +138,8 @@ h2 {
     font-weight: 400;
     font-style: normal;
     color:#747474;
-
-    
     font-size: 25px;
 }
-
-
-
 
     #footer {
         padding-top: 50px;
@@ -163,8 +153,7 @@ h2 {
         margin-left: auto;
         letter-spacing: 1px;
         color: rgb(74, 74, 74);
-        font-size: 13px;
-        
+        font-size: 13px;   
     }
 
 h6 {
@@ -192,8 +181,6 @@ a {
     margin: -7px;
 }
 
-
-
 @media(max-width:500px) {
   
     body{
@@ -218,6 +205,7 @@ a {
     #descriptName{
         white-space: nowrap;
     }
+
     #footer{
         margin-bottom: 50px;
     }
@@ -231,11 +219,12 @@ a {
     font-size: 80px;
     padding-top: 50px;
     color:#747474;
-}
+    }
 }
 
 @media(max-width:1000px),
 (max-height:500px) {
+
     #nameTitle {
         top: 50%;
     }
@@ -245,23 +234,28 @@ a {
         font-size: 17px;
         white-space: nowrap;
     }
+
     h2 {
         white-space: nowrap;
         font-size: 12px;
         display: inline;
         letter-spacing: 5px;
     }
+
     #divideLine {
         color: rgb(55, 55, 55);
     }
+
     #bottomLinks {
         white-space: nowrap;
         top: 90%;
     }
+
     body {
         margin-left: 10px;
         margin-bottom: 2px;
     }
+
     #footer {
         bottom: 0px;
         width: 100%;
@@ -269,18 +263,19 @@ a {
         text-align: center;
         font-size: 13px;
     }
+
     #bottomLinks {
         word-spacing: 10px;
     }
+
     p {
         color: rgb(179, 179, 179);
     }
-
-
 }
 
 @media (min-width: 500px),
 screen and( min-width: 500px) {
+
     h1 {
         white-space: nowrap;
     }
@@ -297,6 +292,7 @@ screen and( min-width: 500px) {
         align-items: center;
         justify-content: center;
     }
+
     h2 {
         display: inline;
         letter-spacing: 7px;
@@ -306,16 +302,16 @@ screen and( min-width: 500px) {
         margin-right: 1%;
         margin-left: 1%;
     }
-    #footer {
 
+    #footer {
         bottom: 0;
         width: 100%
     }
+
     #titleWork{
         line-height: 3vw;
         font-size: 1vw;
     }
-
 }
 
 a.bottom {
@@ -466,7 +462,6 @@ a.bottom:hover:before {
     background: inherit;
 }
 
-
 /* Moves Line Down */
 
 .menu-wrap .hamburger>div::after {
@@ -574,16 +569,14 @@ a.bottom:hover:before {
 }
 
 #bioBody {
-font-family: jubilat,serif;
-font-weight: 200;
-font-style: normal;
-letter-spacing: 2px;
+    font-family: jubilat,serif;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 2px;
     font-size: 12px;
     line-height: 24px;
     text-align: left;
     width: 70%;
-    /* width: 875px; */
-    /* color: rgb(28, 28, 28); */
     color:#747474;
 }
 
@@ -595,6 +588,7 @@ summary {
 summary::-webkit-details-marker {
     display: none;
 }
+
 /* collapsible end */
 #expandResume {
     font-size: 15px;
@@ -663,18 +657,15 @@ th,
         text-align: left;
     }
 
-
     /* skill */
     
     li {
-        /*style the li tag*/
         list-style-type: none;
         font-family: sans-serif;
         letter-spacing: 1px;
         font-family: rubik, sans-serif;
         font-size: 12px;
         font-weight: 400;
-
     }
 
      /* back to top */
@@ -715,7 +706,6 @@ th,
         text-align: right;
         margin-left: 60%;
     }
-
 
     #sectionHead {
         text-align: left;
@@ -785,7 +775,6 @@ th,
         white-space: pre;
     }
 
-
     button {
         background: transparent;
         color:#4d4d4d;
@@ -817,11 +806,8 @@ th,
             position: relative;
             padding-bottom: -20px;
             line-height: 0px;
-            z-index: 60;
-            
+            z-index: 60;   
         }
-
-       
 
         #descriptName{
             font-size: 11.5px;
@@ -840,8 +826,6 @@ th,
     } 
  }
 
-
-
 #divideTab {
     padding-right: 4em;
     padding-left: 4em;
@@ -857,12 +841,10 @@ th,
     animation-duration: 5s;
 }
 
-
 #texts {
     writing-mode: vertical-rl;
     text-orientation: mixed;
 }
-
 
 ul {
     display: inline-block;
@@ -903,7 +885,6 @@ ul.sideNav li {
     line-height: 45px;
 }
 
-
 a {
     color: rgb(74, 74, 74);
     text-decoration: none;
@@ -918,13 +899,10 @@ a:hover {
     transition: color .2s ease-out;
 }
 
-
-
 h6 {
     color: rgb(74, 74, 74);
     font-size: 10px;
 }
-
 
 a {
     display: inline;
@@ -944,11 +922,9 @@ a {
     text-shadow: 0px 1px 2px rgb(237, 237, 237);
 }
 
-
 #projectName{
     color:#626262;
 }
-
 
 @media(max-width:1000px),
 
@@ -958,11 +934,10 @@ a {
         height: .2vh;
         font-size: .4vw;
     }
-.text{
-    margin-bottom: .8vh;
-}
+    .text{
+        margin-bottom: .8vh;
+    }  
 
-    
     #divideLine {
         color:#747474;
         font-family: jubilat-thin,serif;
@@ -1003,12 +978,8 @@ a {
 }
 
 @media (max-width: 500px){ 
-
-
     .menu-wrap .menu {
-        /*  */
         left: 30%;
-        /* width: 80%; */
         height: 14%;
         visibility: hidden;
         overflow: hidden;
@@ -1016,6 +987,7 @@ a {
         align-items: center;
         justify-content: center;
     }
+
     #margined{
         margin-left: 7.5%;
         margin-right: 7.5%;  
@@ -1033,14 +1005,11 @@ a {
     ul{
         margin-right: 1rem;
     }  
+
     body{
     overflow-x: hidden;
     }
-
-    
 }
-
-
 
 a.bottom {
     position: relative;
@@ -1067,8 +1036,6 @@ a.bottom:hover:before {
     background-color: inherit;
     font-family: inherit;
 }
-
-/* Add a red background color to navbar links on hover */
 
 .dropdown-content {
     display: none;
@@ -1124,7 +1091,6 @@ a.bottom:hover:before {
 .btn:hover {
     opacity: 0.7;
 }
-
 
 /* MENU STYLES */
 
@@ -1272,40 +1238,42 @@ a.bottom:hover:before {
 }
 
 body {
-
     overflow-x: hidden;
-
 }
-
-
 
 @media(max-width:1000px),
 (max-height:500px) {
     #nameTitle {
         top: 50%;
     }
+
     h1 {
         top: 30%;
         font-size: 17px;
         white-space: nowrap;
     }
+
     h2 {
         white-space: nowrap;
         font-size: 12px;
         display: inline;
         letter-spacing: 5px;
     }
+
     #divideLine {
         color: rgb(55, 55, 55);
     }
+
     #bottomLinks {
         white-space: nowrap;
         top: 90%;
     }
+
     body {
         margin-left: 5px;
         margin-bottom: 2px;
     }
+
     #footer {
         bottom: 0px;
         width: 100%;
@@ -1314,17 +1282,20 @@ body {
         font-size: 13px;
         color: rgb(74, 74, 74);
     }
+
     #bottomLinks {
         word-spacing: 10px;
     }
+
     p {
         color: rgb(217, 217, 217);
     }
+
     #bioBody {
         font-family: jubilat,serif;
-    font-weight: 200;
-    font-style: normal;
-    letter-spacing: 2px;
+        font-weight: 200;
+        font-style: normal;
+        letter-spacing: 2px;
         font-size: 13px;
         line-height: 24px;
         text-align: left;
@@ -1351,7 +1322,6 @@ a.bottom:hover:before {
     overflow: hidden;
 }
 
-
 /* Dropdown button */
 
 .dropdown .dropbtn {
@@ -1362,9 +1332,7 @@ a.bottom:hover:before {
     background-color: inherit;
     font-family: inherit;
 }
-
-
-/* Add a red background color to navbar links on hover */
+/* color to navbar links on hover  */
 
 .dropdown-content {
     display: none;
@@ -1382,7 +1350,6 @@ a.bottom:hover:before {
 
 .dropdown-content a:hover {
     color: gray;
-    /* check */
 }
 
 .dropdown:hover .dropdown-content {
@@ -1392,8 +1359,6 @@ a.bottom:hover:before {
 :root {
     --menu-speed: 0.75s;
 }
-
-
 
 .btn {
     display: inline-block;
@@ -1405,12 +1370,9 @@ a.bottom:hover:before {
     text-decoration: none;
 }
 
-
-
 .btn:hover {
     opacity: 0.7;
 }
-
 
 #myPic {
     height: 400px;
@@ -1434,37 +1396,29 @@ a.bottom:hover:before {
     color:#747474;
 }
 
-
-
-
 #topRow{
-
     color: rgb(121, 121, 121);
 }
 
-th,
-    td {
+    th, td {
         border: 0;
         border-left: none;
         border-collapse: collapse;
         font-family: rubik, sans-serif;
         font-size: 15px;
     }
-    #generalTable{
-            padding-right: 200px; 
-            vertical-align: center;
-            text-align: left;
-            border: 0;
-            border-style: none;
-            /* border-style: solid; */
-            /* border-bottom: 1px solid rgb(58, 58, 58); */
-            border-left: none;
-            border-collapse: collapse;
-            font-family: rubik, sans-serif;
-            font-size: 15px;
-        }
 
-    
+    #generalTable{
+        padding-right: 200px; 
+        vertical-align: center;
+        text-align: left;
+        border: 0;
+        border-style: none;
+        border-left: none;
+        border-collapse: collapse;
+        font-family: rubik, sans-serif;
+        font-size: 15px;
+    }
     
     table {
         border-collapse: collapse;
@@ -1475,25 +1429,25 @@ th,
         vertical-align: middle;
     }
     
-    
     tr {
         padding: 15px;
-        /* line-height: 30px; */
     }
     
     td {
         vertical-align: top;
     }
+
     #makeInline{
         vertical-align: inherit
     }
-    
-#gitHubText{
-    font-family: rubik, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: rgb(121, 121, 121);
-}
+        
+    #gitHubText{
+        font-family: rubik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: rgb(121, 121, 121);
+    }
+
     #miniHeader {
         color: rgba(104, 115, 119, 10);
         font-size: 16px;
@@ -1515,19 +1469,13 @@ th,
         text-align: left;
     }
 
-
-    /* skill */
-    
     li {
         list-style-type: none;
         font-family: sans-serif;
         font-family: rubik, sans-serif;
         font-size: 12px;
         font-weight: 400;
-    }
-    
-    
-    
+    } 
 
      /* back to top */
     
@@ -1545,7 +1493,6 @@ th,
         padding-bottom: 15px;
     }
 
-    
     @media screen and (prefers-reduced-motion: no-preference) {
         html {
             scroll-behavior: smooth;
@@ -1578,10 +1525,10 @@ th,
         padding-bottom: 30px;
     }
 
-
     col #exit {
         margin-left: 3%;
     }
+
     li {
         list-style-type: none;
         font-family: sans-serif;
@@ -1617,6 +1564,7 @@ th,
         font-weight: 300;
         font-size: 12px;
     }
+
     #tableHeaderLine{
         border-bottom: 1px solid rgb(58, 58, 58);
     }
@@ -1630,22 +1578,24 @@ th,
         display: inline;
         letter-spacing: 7px;
     }
+
     #divideLine {
         color: rgb(85, 85, 85);
         margin-right: 1%;
         margin-left: 1%;
     }
-    #footer {
 
+    #footer {
         bottom: 0;
         width: 100%;
         color: rgb(74, 74, 74);
     }
+
     #bioBody {
         font-family: jubilat,serif;
-    font-weight: 200;
-    font-style: normal;
-    letter-spacing: 2px;
+        font-weight: 200;
+        font-style: normal;
+        letter-spacing: 2px;
         font-size: 13px;
         line-height: 24px;
         text-align: left;
@@ -1653,13 +1603,13 @@ th,
         margin-left: 10px;
         color:#747474;
     }
+
     #underName {
         font-size: 4em;
     }
+
     #contentImage{  width: 80vw;}
 }
-
-
 
 #outlineTable  td, th,tr  {
     padding: 20px;
@@ -1668,14 +1618,8 @@ th,
     border-style: solid;
     border-bottom: 1px solid rgb(58, 58, 58);
     border-right: 1px solid rgb(58, 58, 58);
-
-
-
 }
+
 #topRow2,td{
-
  border-style: hidden;
-
 }
-
-

@@ -4,6 +4,20 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
 
+
+
+// custom geom
+
+var coordinatesList = [
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, 10, 0),
+    new THREE.Vector3(5, 10, 0),
+    new THREE.Vector3(2, 8, 0),
+    new THREE.Vector3(5, 5, 0)
+  ];
+  
+
+
 // Loaders
 const loadingBarElement = document.querySelector('.loading-bar')
 
@@ -86,7 +100,7 @@ const updateAllMaterials = () =>
             child.material.envMapIntensity = debugObject.envMapIntensity
             child.material.needsUpdate = true
             child.material.metalness = 0.8
-            child.material.roughness = 0.2
+            child.material.roughness = 0.25
             child.material.opacity = 0.9
             child.material.color.setHex( 0xADD8E6 );
             child.castShadow = true

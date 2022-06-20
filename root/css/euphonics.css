@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(34, 34, 34);
+    background-color: black;
     margin-top: 2%;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -12,7 +12,7 @@ body {
     position: absolute;
     left: 50%;
     top: 55%;
-    -ms-transform: translateY(-50%);
+    -ms-transform: translateY(-40%);
     transform: translateY(-90%);
     transform: translateX(-50%);
     min-height: 10em;
@@ -20,19 +20,24 @@ body {
     vertical-align: middle;
     line-height: 25px;
 }
-
-h1 {
-    text-align: center;
-    font-size: 19px;
-    min-height: 10em;
-    display: table-cell;
-    vertical-align: middle;
-    letter-spacing: 10px;
+#topName{
+    color: #983FE0;
     font-family: rubik, sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
-    color: rgb(107, 211, 249);
+    font-size: 30px;
+    letter-spacing: 5px;
 }
+
+#makeWhite{
+    color: rgb(167, 167, 167);
+    font-family: jubilat-thin,serif;
+    font-weight: 200;
+    font-style: normal;
+    line-height:30px ;
+    font-size: 20px;
+}
+
 
 #nameTitle {
     margin-top: auto;
@@ -40,8 +45,8 @@ h1 {
     position: fixed;
     left: 49%;
     top: 53%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%);
     transform: translateX(-50%);
     min-height: 10em;
     display: table-cell;
@@ -123,8 +128,8 @@ font-style: normal;
 @media (max-width: 500px) {
     h1 {
         white-space: nowrap;
-        letter-spacing: 0.25em;
-        font-size: 4.0vw;  
+        /* letter-spacing: 0.25em; */
+        /* font-size: 4.0vw;   */
     }
 
     body{  overflow-x: scroll;}
@@ -132,7 +137,7 @@ font-style: normal;
     #nameTitle {
     left: 50%;
     top: 50%;
-    -ms-transform: translateY(-50%);
+    -ms-transform: translateY(-40%);
     transform: translateY(-90%);
     transform: translateX(-50%);
     }
